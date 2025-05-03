@@ -18,5 +18,5 @@ pip install git+https://github.com/gjpelletier/stepAIC.git --upgrade
 
 Next import the stepAIC functions as follows in your notebook or python code:<br>
 ```
-import stepAIC
+from stepAIC import stepAIC
 ```
