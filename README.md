@@ -1,5 +1,5 @@
 
-# stepAIC - Stepwise linear regression to minimize AIC and/or eliminate non-signficant predictors
+# stepAIC - Python function for stepwise linear regression to minimize AIC and/or eliminate non-significant predictors
 
 
 The stepAIC package requires that you have already installed numpy, pandas, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
