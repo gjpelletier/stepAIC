@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 
 def stepAIC(X, y, **kwargs):
@@ -74,21 +74,22 @@ def stepAIC(X, y, **kwargs):
             for candidate in remaining_features:
                 model = sm.OLS(y, sm.add_constant(X[selected_features + [candidate]])).fit()
                 aic_with_candidates.append((model.aic, candidate))
-                if candidate == remaining_features[-1]:
-                    istep += 1
-                    print('\nFORWARD STEP',istep)
-                    print('Features added: ', selected_features + [candidate],'\n')
-                    print(model.summary())        
             aic_with_candidates.sort()  # Sort by AIC
             best_new_aic, best_candidate = aic_with_candidates[0]        
             if best_new_aic < best_aic:
                 best_aic = best_new_aic
                 selected_features.append(best_candidate)
                 remaining_features.remove(best_candidate)
+                istep += 1
+                model = sm.OLS(y, sm.add_constant(X[selected_features])).fit()
+                print('\nFORWARD STEP',istep,", AIC= {:.2f}".format(model.aic))
+                print('Features added: ', selected_features,'\n')
+                print(model.summary())        
             else:            
-                best_aic = best_new_aic
-                selected_features.append(best_candidate)
+                # best_aic = best_new_aic
+                # selected_features.append(best_candidate)
                 remaining_features.remove(best_candidate)
+                model = sm.OLS(y, sm.add_constant(X[selected_features])).fit()
                 print('\nFINAL FORWARD MODEL')
                 print('Best features: ', selected_features,'\n')
                 print(model.summary())
