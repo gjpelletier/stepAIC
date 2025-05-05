@@ -7,7 +7,7 @@ BIC is generally considered better than AIC for evaluation of stepwise regressio
 
 - Penalty for Complexity: BIC penalizes models more heavily for the number of parameters, making it more conservative and less likely to overfit, especially with larger sample sizes.
 - Model Selection: BIC is particularly useful when the sample size is large, as it encourages simpler models that are less likely to capture noise.
-- Model Recovery: Studies suggest that BIC tends to recover the true model more effectively than AIC, particularly in scenarios where the sample size is significant.
+- Model Recovery: Studies suggest that BIC tends to recover the true model more effectively than AIC, particularly in scenarios where the sample size is large.
 While both criteria are useful for model selection, BIC is often preferred for its stricter criteria, which helps in avoiding overfitting and improving model interpretability
 
 
