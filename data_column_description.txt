@@ -1,0 +1,1 @@
+{"attr_1": "cement", "attr_2": "slag", "attr_3": "fly_ash", "attr_4": "water", "attr_5": "superplasticizer", "attr_6": "coarse_aggregate", "attr_7": "fine_aggregate", "attr_8": "age"}
