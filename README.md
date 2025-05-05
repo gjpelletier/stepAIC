@@ -11,7 +11,7 @@ BIC is generally considered better than AIC for evaluation of stepwise regressio
 While both criteria are useful for model selection, BIC is often preferred for its stricter criteria, which helps in avoiding overfitting and improving model interpretability
 
 
-The stepAIC package requires that you have already installed numpy, pandas, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
+The stepAIC and stepBIC functions require that you have already installed numpy, pandas, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
 
 # Installation for Python or Jupyter Notebook
 
