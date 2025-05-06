@@ -10,7 +10,6 @@ BIC is generally considered better than AIC for evaluation of stepwise regressio
 - Model Recovery: Studies suggest that BIC tends to recover the true model more effectively than AIC, particularly in scenarios where the sample size is large.
 While both criteria are useful for model selection, BIC is often preferred for its stricter criteria, which helps in avoiding overfitting and improving model interpretability
 
-
 The stepAIC and stepBIC functions require that you have already installed numpy, pandas, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
 
 # Installation for Python or Jupyter Notebook
@@ -29,3 +28,8 @@ Next import the stepAIC and stepBIC functions as follows in your notebook or pyt
 ```
 from stepAIC import stepAIC, stepBIC
 ```
+
+## Example
+
+The [stepAIC_example_concrete.ipynb](https://github.com/gjpelletier/stepAIC/blob/main/stepAIC_example_concrete.ipynb) Jupyter notebook presents an example of the use of stepAIC and stepBIC.
+
