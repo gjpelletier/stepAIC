@@ -29,7 +29,7 @@ Next import the stepAIC and stepBIC functions as follows in your notebook or pyt
 from stepAIC import stepAIC, stepBIC
 ```
 
-## Example
+# Example
 
 The [stepAIC_example_concrete.ipynb](https://github.com/gjpelletier/stepAIC/blob/main/stepAIC_example_concrete.ipynb) Jupyter notebook presents an example of the use of stepAIC and stepBIC.
 
