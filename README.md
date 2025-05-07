@@ -31,5 +31,5 @@ from stepAIC import stepAIC
 
 # Example
 
-The [stepAIC_example_concrete.ipynb](https://github.com/gjpelletier/stepAIC/blob/main/stepAIC_example_concrete.ipynb) Jupyter notebook presents an example of the use of stepAIC with AIC and BIC as criteria with forward and backward stepping.
+The [stepAIC_example_concrete.ipynb](https://github.com/gjpelletier/stepAIC/blob/main/stepAIC_example_concrete.ipynb) Jupyter notebook presents examples of the use of stepAIC with AIC and BIC as criteria with forward and backward stepping.
 
