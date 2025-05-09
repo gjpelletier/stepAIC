@@ -7,7 +7,7 @@ The stepAIC algorothim has the option to use either forward selection (default),
 
 - Forward selection (default) starts with no predictors and adds predictors as long as it improves the model (reduces AIC or BIC) 
 - Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC)
-- All combinations evaluates all possible combinations of predictors to find the best of all possible models (up to 20 candidate predictors)
+- All possible combinations of predictors to find the best of all possible models (up to 20 candidate predictors)
 
 The stepAIC algorithm also has the option (default) to remove any non-signficant predictors (p-values below a user-specified p_threshold with default p_threshold=0.05) after either a forward or backward search. 
 
