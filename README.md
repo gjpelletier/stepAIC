@@ -3,7 +3,7 @@
 
 The stepAIC function uses an algorithm to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a regression model. 
 
-The stepAIC algorothim has the option to use either a forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
+The stepAIC algorothim has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
 
 - Forward selection (default) starts with no predictors and adds predictors as long as it improves the model (reduces AIC or BIC) 
 - Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC)
