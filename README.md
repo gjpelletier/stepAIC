@@ -1,7 +1,7 @@
 
-# stepAIC - Python function for stepwise regression to minimize either AIC or BIC and eliminate non-significant predictors
+# stepAIC - Python function for stepwise linear regression to minimize either AIC or BIC and eliminate non-significant predictors
 
-The stepAIC function uses an algorithm to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a regression model. 
+The stepAIC function uses an algorithm to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a linear regression model. 
 
 The stepAIC algorothim has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
 
