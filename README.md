@@ -18,7 +18,7 @@ Using AIC as the criterion is the default in the stepAIC fuction. The user also 
 - Model Recovery: Studies suggest that BIC tends to recover the true model more effectively than AIC, particularly in scenarios where the sample size is large.
 While both criteria are useful for model selection, BIC is often preferred for its stricter criteria, which helps in avoiding overfitting and improving model interpretability
 
-The stepAIC function requires that you have already installed numpy, pandas, statsmodels, itertools packages. We also recommend that you have installed seaborn and matplotlib.
+The stepAIC function requires that you have already installed numpy, pandas, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
 
 # Installation for Python or Jupyter Notebook
 
