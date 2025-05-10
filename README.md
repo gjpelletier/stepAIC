@@ -22,12 +22,12 @@ The stepAIC function requires that you have already installed numpy, pandas, and
 
 # Installation for Python or Jupyter Notebook
 
-If you have not already installed PyOAE, enter the following with pip or !pip in your notebook or terminal:<br>
+If you have not already installed stepAIC, enter the following with pip or !pip in your notebook or terminal:<br>
 ```
 pip install git+https://github.com/gjpelletier/stepAIC.git
 ```
 
-if you are upgrading from a previous installation of PyOAE, enter the following with pip pr !pip in your notebook or terminal:<br>
+if you are upgrading from a previous installation of stepAIC, enter the following with pip pr !pip in your notebook or terminal:<br>
 ```
 pip install git+https://github.com/gjpelletier/stepAIC.git --upgrade
 ```
