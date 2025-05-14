@@ -54,5 +54,5 @@ from stepAIC import stepAIC
 
 # Example
 
-The [stepAIC_example_concrete.ipynb](https://github.com/gjpelletier/stepAIC/blob/main/stepAIC_example_concrete.ipynb) Jupyter notebook presents examples of the use of stepAIC with AIC and BIC as the criterion with forward and backward stepping, and also with the option of searching all possible models.
+The [Stepwise_and_Lasso_example.ipynb](https://github.com/gjpelletier/stepAIC/blob/main/Stepwise_and_Lasso_example.ipynb) Jupyter notebook presents examples of the use of stepAIC with AIC and BIC as the criterion with forward and backward stepping, and also with the option of searching all possible models.
 
