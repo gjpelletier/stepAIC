@@ -1,15 +1,30 @@
 
 # stepAIC - Python function for stepwise linear regression to minimize either AIC or BIC and eliminate non-significant predictors
 
-The stepAIC function uses an algorithm to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a linear regression model. 
+The stepAIC package includes two functions, **stepwise** and **lasso**, to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a linear regression model.
 
-The stepAIC algorothim has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
+### Stepwise
+
+The **stepwise** function in the stepAIC package has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
 
 - Forward selection (default) starts with no predictors and adds predictors as long as it improves the model (reduces AIC or BIC) 
 - Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC)
 - All possible combinations of predictors to find the best of all possible models (up to 20 candidate predictors)
 
-The stepAIC algorithm also has the option (default) to remove any non-signficant predictors (p-values below a user-specified p_threshold with default p_threshold=0.05) after either a forward or backward search. 
+The stepwise algorithm also has the option (default) to remove any non-signficant predictors (p-values below a user-specified p_threshold with default p_threshold=0.05) after either a forward or backward search. 
+
+### Lasso
+
+The **lasso** function in the stepAIC package provides output of regression models and summary statistics using the following four methods from the sklearn.linear_model package:
+
+- LassoCV: Lasso using Cross-Validation with coordinate descent  
+- LassoLarsCV: Lasso using Cross-Validation with Least Angle Regression
+- LassoLarsIC using AIC: Lasso using Least Angle Regression with Akaike Information Criterion
+- LassoLarsIC using BIC: Lasso using Least Angle Regression with Bayesian Information Criterion
+
+Lasso regression is a linear regression method that includes a penalty term to the standard least squares objective function. The penalty term is a sum of the absolute values of the regression coefficients multiplied by a hyperparameter, denoted as "alpha". The **lasso** function finds the optimum value of alpha for each of the four different methods methods listed above. The alpha determines the amount of shrinkage applied to the model coefficients. As alpha increases, the coefficients are pushed towards zero, and some may become exactly zero, effectively eliminating those features from the model. 
+
+### AIC vs BIC
 
 Using AIC as the criterion is the default in the stepAIC fuction. The user also has the option to use the BIC as the criterion instead. AIC is considered to be a useful critierion in stepwise regression. However, BIC is generally considered to be better than AIC for several reasons:
 
@@ -18,7 +33,7 @@ Using AIC as the criterion is the default in the stepAIC fuction. The user also 
 - Model Recovery: Studies suggest that BIC tends to recover the true model more effectively than AIC, particularly in scenarios where the sample size is large.
 While both criteria are useful for model selection, BIC is often preferred for its stricter criteria, which helps in avoiding overfitting and improving model interpretability
 
-The stepAIC function requires that you have already installed numpy, pandas, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
+The stepAIC function requires that you have already installed numpy, pandas, scikit-learn, tabulate, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
 
 # Installation for Python or Jupyter Notebook
 
