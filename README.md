@@ -49,7 +49,7 @@ pip install git+https://github.com/gjpelletier/stepAIC.git --upgrade
 
 Next import the stepAIC function as follows in your notebook or python code:<br>
 ```
-from stepAIC import stepAIC
+from stepAIC import stepwise, lasso
 ```
 
 # Example
