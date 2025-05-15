@@ -3,7 +3,7 @@
 
 The stepAIC package includes two functions, **stepwise** and **lasso**, to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a linear regression model.
 
-The choice between Lasso regression and stepwise regression depends on the specific context and requirements of the analysis. Lasso regression is generally preferred for its efficiency and ability to handle large datasets without overfitting. However, stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. It is also less prone to the issues of inflated type I error rates and the complexity of overfitting that can arise with Lasso regression. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
+The choice between Lasso regression and stepwise regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used but often criticized ([e.g. Flom et al 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso regression is generally preferred for its efficiency and ability to handle large datasets without overfitting. However, stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. It is also less prone to the issues of inflated type I error rates and the complexity of overfitting that can arise with Lasso regression. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
 
 ### Stepwise
 
