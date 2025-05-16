@@ -156,6 +156,7 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 ```
 
+Note that Example 2 using stepwise regression found a more parsimonious model with fewer features and similar skill compared with Example 1 using Lasso regression for the diabetes data set.
 
 
 
