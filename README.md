@@ -58,7 +58,7 @@ from stepAIC import stepwise, lasso
 
 In this example we will use Lasso regression to analyze the diabetes data available from sklearn.
 
-Running the following code:
+Run the following code:
 ```
 # Read X and y from the sklearn diabetes data set
 from sklearn.datasets import load_diabetes
@@ -70,7 +70,7 @@ from stepAIC import lasso
 model_objects, model_outputs = lasso(X, y)
 ```
 
-Produces the following display of output tables with regression statistics and best-fit coefficients for each model:
+Running the code above produces the following display of output tables with regression statistics and best-fit coefficients for each model (LassoCV, LassoLarsCV, LassoLarsIC using AIC, LassoLarsIC using BIC):
 ```
 Lasso regression statistics of best models in model_outputs['stats']:
 
@@ -117,7 +117,7 @@ We will use the following optional arguments:
 - standardize='on' to use the sklearn.processing StandardScaler to normalize the X values
 - verbose='off' to display only the final selected best model
 
-Running the following code:
+Run the following code:
 ```
 # Read X and y from the sklearn diabetes data set
 from sklearn.datasets import load_diabetes
@@ -130,7 +130,7 @@ best_model, best_features = stepwise(X, y,
     criterion='bic', direction='all', standardize='on', verbose='off')
 ```
 
-Produces the following output display of the best fit model:
+Running the code above produces the following output display of the best fit model:
 ```
 BEST OF ALL POSSIBLE MODELS AFTER REMOVING INSIGNIFICANT PREDICTORS
 Best features:  ['sex', 'bmi', 'bp', 's3', 's5'] 
