@@ -106,6 +106,8 @@ Coefficients of best models in model_outputs['popt']:
 | s6            |   2.45869 |       2.46804 |        2.6051  |        2.6051  |
 ```
 
+Note that the model_objects and model_outputs returned by the lasso function also contain the best-fit sklearn model objects and many other useful outputs as described by help(lasso)
+
 ## Example 2. Use Stepwise regression to analyze diabetes data
 
 In this example we will use Stepwise regression to analyze the diabetes data available from sklearn.
@@ -167,6 +169,9 @@ Notes:
 ```
 
 Note that Example 2 using stepwise regression found a more parsimonious model with 5 features (compared with 7 features using Lasso regression), and similar skill compared with using Lasso regression for the same diabetes data set.
+
+Also note that the best_model and best_features returned by the lasso function also provide the best-fitted statsmodels model object and a list of the selected features of the best-fit model.
+
 
 
 
