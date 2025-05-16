@@ -68,7 +68,7 @@ from stepAIC import lasso
 model_objects, model_outputs = lasso(X, y)
 ```
 
-Produces the following display of output:
+Produces the following display of output tables and figures:
 ```
 Lasso regression statistics of best models in model_outputs['stats']:
 
