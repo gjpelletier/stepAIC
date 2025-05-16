@@ -115,7 +115,7 @@ from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
 X.head()
 
-# Use the lasso function in the stepAIC package
+# Use the stepwise function in the stepAIC package
 from stepAIC import stepwise
 best_model, best_features = stepwise(X, y, criterion='bic', direction='all', drop_insig='off')
 ```
