@@ -56,7 +56,7 @@ from stepAIC import stepwise, lasso
 
 ## Example 1. Use Lasso regression to analyze diabetes data
 
-In this example we will use Lasso regression to analyze the diabetes data available from sklearn.
+In this example we will use Lasso regression to analyze the diabetes data available from sklearn. The lasso function uses the sklearn.processing StandardScaler to standardize the X values by default.
 
 Run the following code:
 ```
@@ -114,7 +114,7 @@ We will use the following optional arguments:
 
 - criterion='bic' to use BIC as the criterion
 - direction='all' to search for the best model from all possible combinations of features
-- standardize='on' to use the sklearn.processing StandardScaler to normalize the X values
+- standardize='on' to use the sklearn.processing StandardScaler to standardize the X values
 - verbose='off' to display only the final selected best model
 
 Run the following code:
