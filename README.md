@@ -54,7 +54,9 @@ Next import the stepAIC function as follows in your notebook or python code:<br>
 from stepAIC import stepwise, lasso
 ```
 
-## Example 1. Use Lasso regression to analyze the diabetes data set provided by sklearn
+## Example 1. Use Lasso regression to analyze diabetes data
+
+In this example we will use Lasso regression to analyze the diabetes data available from sklearn.
 
 Running the following code:
 ```
@@ -104,7 +106,9 @@ Coefficients of best models in model_outputs['popt']:
 | s6            |   2.45869 |       2.46804 |        2.6051  |        2.6051  |
 ```
 
-## Example 2. Use Stepwise regression to analyze the diabetes data set
+## Example 2. Use Stepwise regression to analyze diabetes data
+
+In this example we will use Stepwise regression to analyze the diabetes data available from sklearn.
 
 We will use the following optional arguments:
 
