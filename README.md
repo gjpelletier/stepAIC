@@ -54,7 +54,71 @@ Next import the stepAIC function as follows in your notebook or python code:<br>
 from stepAIC import stepwise, lasso
 ```
 
-# Example
+# Example 1. Use Lasso regression to analyze the diabetes data set provided by sklearn
 
-The [Stepwise_and_Lasso_example.ipynb](https://github.com/gjpelletier/stepAIC/blob/main/Stepwise_and_Lasso_example.ipynb) Jupyter notebook presents examples of the use of the stepwise and Lasso linear regression functions.
+Running the following code:
+```
+# Read X and y from the sklearn diabetes data set
+from sklearn.datasets import load_diabetes
+X, y = load_diabetes(return_X_y=True, as_frame=True)
+X.head()
+
+# Use the lasso function in the stepAIC package
+from stepAIC import lasso
+model_objects, model_outputs = lasso(X, y)
+```
+
+Produces the following display of output:
+```
+Lasso regression statistics of best models in model_outputs['stats']:
+
+| Statistic          |         LassoCV |     LassoLarsCV |    LassoLarsAIC |    LassoLarsBIC |
+|:-------------------|----------------:|----------------:|----------------:|----------------:|
+| alpha              |     1.11865     |     1.10767     |     0.950407    |     0.950407    |
+| r-squared          |     0.512957    |     0.512989    |     0.51341     |     0.51341     |
+| adjusted r-squared |     0.503959    |     0.503991    |     0.50442     |     0.50442     |
+| nobs               |   442           |   442           |   442           |   442           |
+| df residuals       |   434           |   434           |   434           |   434           |
+| df model           |     7           |     7           |     7           |     7           |
+| F-statistic        |    65.2989      |    65.3073      |    65.4173      |    65.4173      |
+| Prob (F-statistic) |     1.11022e-16 |     1.11022e-16 |     1.11022e-16 |     1.11022e-16 |
+| RMSE               |    53.7411      |    53.7393      |    53.7161      |    53.7161      |
+| Log-Likelihood     | -2388.18        | -2388.16        | -2387.97        | -2387.97        |
+| AIC                |  4792.36        |  4792.33        |  4790           |  4790           |
+| BIC                |  4825.09        |  4825.06        |  4818.64        |  4818.64        |
+
+Coefficients of best models in model_outputs['popt']:
+
+| Coefficient   |   LassoCV |   LassoLarsCV |   LassoLarsAIC |   LassoLarsBIC |
+|:--------------|----------:|--------------:|---------------:|---------------:|
+| constant      | 152.133   |     152.133   |      152.133   |      152.133   |
+| age           |  -0       |       0       |        0       |        0       |
+| sex           |  -9.11162 |      -9.13079 |       -9.40617 |       -9.40617 |
+| bmi           |  24.8066  |      24.809   |       24.8419  |       24.8419  |
+| bp            |  13.9806  |      13.9909  |       14.1342  |       14.1342  |
+| s1            |  -4.58713 |      -4.61047 |       -4.94418 |       -4.94418 |
+| s2            |  -0       |       0       |        0       |        0       |
+| s3            | -10.5553  |     -10.5615  |      -10.651   |      -10.651   |
+| s4            |   0       |       0       |        0       |        0       |
+| s5            |  24.2697  |      24.2839  |       24.4841  |       24.4841  |
+| s6            |   2.45869 |       2.46804 |        2.6051  |        2.6051  |
+```
+
+![Lasso_alpha_vs_coef](https://github.com/user-attachments/assets/b3bbde6a-32d5-4fee-bc51-8f260ded300e)
+
+![LassoCV_alpha_vs_MSE](https://github.com/user-attachments/assets/5926b551-6b15-4e18-ad45-adad163d32a5)
+
+![LassoLarsCV_alpha_vs_MSE](https://github.com/user-attachments/assets/a4ec7ccd-2ee7-4410-93c3-d22080fbe7b5)
+
+![LassoLarsIC_alpha_vs_AIC_BIC](https://github.com/user-attachments/assets/804930e0-40ba-4480-8a51-4c80a8190940)
+
+![LassoLarsIC_sequence_of_AIC_BIC](https://github.com/user-attachments/assets/ffbf630e-8f0f-47e1-abce-f4f007b33207)
+
+![residuals](https://github.com/user-attachments/assets/187e1a01-573d-42d0-a3e5-e0a657e2e76e)
+
+
+
+
+
+
 
