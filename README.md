@@ -106,7 +106,12 @@ Coefficients of best models in model_outputs['popt']:
 
 # Example 2. Use Stepwise regression to analyze the diabetes data set
 
-We will use criterion='bic' to use BIC as the criterion. We will use direction='all' to search for the best model from all possible combinations of features.
+We will use the following optional arguments:
+
+- criterion='bic' to use BIC as the criterion
+- direction='all' to search for the best model from all possible combinations of features
+- standardize='on' to use the sklearn.processing StandardScaler to normalize the X values
+- verbose='off' to display only the final selected best model
 
 Running the following code:
 ```
@@ -117,12 +122,13 @@ X.head()
 
 # Use the stepwise function in the stepAIC package
 from stepAIC import stepwise
-best_model, best_features = stepwise(X, y, criterion='bic', direction='all', drop_insig='off')
+best_model, best_features = stepwise(X, y, 
+    criterion='bic', direction='all', standardize='on', verbose='off')
 ```
 
 Produces the following output display of the best fit model:
 ```
-BEST OF ALL POSSIBLE MODELS BEFORE REMOVING INSIGNIFICANT PREDICTORS
+BEST OF ALL POSSIBLE MODELS AFTER REMOVING INSIGNIFICANT PREDICTORS
 Best features:  ['sex', 'bmi', 'bp', 's3', 's5'] 
 
                             OLS Regression Results                            
@@ -131,7 +137,7 @@ Dep. Variable:                 target   R-squared:                       0.509
 Model:                            OLS   Adj. R-squared:                  0.503
 Method:                 Least Squares   F-statistic:                     90.26
 Date:                Thu, 15 May 2025   Prob (F-statistic):           4.75e-65
-Time:                        17:46:22   Log-Likelihood:                -2390.1
+Time:                        20:17:15   Log-Likelihood:                -2390.1
 No. Observations:                 442   AIC:                             4792.
 Df Residuals:                     436   BIC:                             4817.
 Df Model:                           5                                         
@@ -140,16 +146,16 @@ Covariance Type:            nonrobust
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
 const        152.1335      2.585     58.849      0.000     147.053     157.214
-sex         -235.7724     60.469     -3.899      0.000    -354.620    -116.925
-bmi          523.5678     65.293      8.019      0.000     395.239     651.897
-bp           326.2311     63.084      5.171      0.000     202.245     450.217
-s3          -289.1148     65.646     -4.404      0.000    -418.136    -160.094
-s5           474.2902     65.683      7.221      0.000     345.195     603.386
+sex          -11.2146      2.876     -3.899      0.000     -16.868      -5.562
+bmi           24.9036      3.106      8.019      0.000      18.800      31.008
+bp            15.5172      3.001      5.171      0.000       9.620      21.415
+s3           -13.7518      3.122     -4.404      0.000     -19.889      -7.615
+s5            22.5597      3.124      7.221      0.000      16.419      28.700
 ==============================================================================
 Omnibus:                        2.465   Durbin-Watson:                   1.990
 Prob(Omnibus):                  0.291   Jarque-Bera (JB):                2.099
 Skew:                           0.051   Prob(JB):                        0.350
-Kurtosis:                       2.678   Cond. No.                         32.7
+Kurtosis:                       2.678   Cond. No.                         2.33
 ==============================================================================
 
 Notes:
