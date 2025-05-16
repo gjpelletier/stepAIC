@@ -68,7 +68,7 @@ from stepAIC import lasso
 model_objects, model_outputs = lasso(X, y)
 ```
 
-Produces the following display of output tables and figures:
+Produces the following display of output tables with regression statistics and best-fit coefficients for each model:
 ```
 Lasso regression statistics of best models in model_outputs['stats']:
 
@@ -104,20 +104,57 @@ Coefficients of best models in model_outputs['popt']:
 | s6            |   2.45869 |       2.46804 |        2.6051  |        2.6051  |
 ```
 
-![Lasso_alpha_vs_coef](https://github.com/user-attachments/assets/b3bbde6a-32d5-4fee-bc51-8f260ded300e)
+# Example 2. Use Stepwise regression to analyze the diabetes data set
 
-![LassoCV_alpha_vs_MSE](https://github.com/user-attachments/assets/5926b551-6b15-4e18-ad45-adad163d32a5)
+We will use criterion='bic' to use BIC as the criterion. We will use direction='all' to search for the best model from all possible combinations of features.
 
-![LassoLarsCV_alpha_vs_MSE](https://github.com/user-attachments/assets/a4ec7ccd-2ee7-4410-93c3-d22080fbe7b5)
+Running the following code:
+```
+# Read X and y from the sklearn diabetes data set
+from sklearn.datasets import load_diabetes
+X, y = load_diabetes(return_X_y=True, as_frame=True)
+X.head()
 
-![LassoLarsIC_alpha_vs_AIC_BIC](https://github.com/user-attachments/assets/804930e0-40ba-4480-8a51-4c80a8190940)
+# Use the lasso function in the stepAIC package
+from stepAIC import stepwise
+best_model, best_features = stepwise(X, y, criterion='bic', direction='all', drop_insig='off')
+```
 
-![LassoLarsIC_sequence_of_AIC_BIC](https://github.com/user-attachments/assets/ffbf630e-8f0f-47e1-abce-f4f007b33207)
+Produces the following output display of the best fit model:
+```
+BEST OF ALL POSSIBLE MODELS BEFORE REMOVING INSIGNIFICANT PREDICTORS
+Best features:  ['sex', 'bmi', 'bp', 's3', 's5'] 
 
-![residuals](https://github.com/user-attachments/assets/187e1a01-573d-42d0-a3e5-e0a657e2e76e)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 target   R-squared:                       0.509
+Model:                            OLS   Adj. R-squared:                  0.503
+Method:                 Least Squares   F-statistic:                     90.26
+Date:                Thu, 15 May 2025   Prob (F-statistic):           4.75e-65
+Time:                        17:46:22   Log-Likelihood:                -2390.1
+No. Observations:                 442   AIC:                             4792.
+Df Residuals:                     436   BIC:                             4817.
+Df Model:                           5                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        152.1335      2.585     58.849      0.000     147.053     157.214
+sex         -235.7724     60.469     -3.899      0.000    -354.620    -116.925
+bmi          523.5678     65.293      8.019      0.000     395.239     651.897
+bp           326.2311     63.084      5.171      0.000     202.245     450.217
+s3          -289.1148     65.646     -4.404      0.000    -418.136    -160.094
+s5           474.2902     65.683      7.221      0.000     345.195     603.386
+==============================================================================
+Omnibus:                        2.465   Durbin-Watson:                   1.990
+Prob(Omnibus):                  0.291   Jarque-Bera (JB):                2.099
+Skew:                           0.051   Prob(JB):                        0.350
+Kurtosis:                       2.678   Cond. No.                         32.7
+==============================================================================
 
-
-
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+```
 
 
 
