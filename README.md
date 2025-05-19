@@ -139,7 +139,6 @@ We will use the following optional arguments:
 - criterion='bic' to use BIC as the criterion
 - direction='all' to search for the best model from all possible combinations of features
 - standardize='on' to use the sklearn.processing StandardScaler to standardize the X values
-- verbose='off' to display only the final selected best model
 
 Run the following code:
 ```
