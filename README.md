@@ -218,7 +218,7 @@ Note: VIF>5 indicates excessive collinearity
 
 Note that Example 2 using stepwise regression found a more parsimonious model with 5 features (compared with 7 features using Lasso regression), and similar skill compared with using Lasso regression for the same diabetes data set.
 
-Also note that the best_model and best_features returned by the stepwise function also provide the best-fitted statsmodels model object and a list of the selected features of the best-fit model. All of the optional input arguments for the stepwise function are also explained by running help(stepwise) 
+Also note that the model_object and model_output returned by the stepwise function also provide the best-fitted statsmodels model object and a dictionary of many useful regression results and summary statistics as explained by running help(stepwise).
 
 
 
