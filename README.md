@@ -74,6 +74,7 @@ Running the code above produces the following display of output tables with regr
 ```
 Lasso regression statistics of best models in model_outputs['stats']:
 
+
 | Statistic          |         LassoCV |     LassoLarsCV |    LassoLarsAIC |    LassoLarsBIC |
 |:-------------------|----------------:|----------------:|----------------:|----------------:|
 | alpha              |     1.11865     |     1.10767     |     0.950407    |     0.950407    |
@@ -89,21 +90,42 @@ Lasso regression statistics of best models in model_outputs['stats']:
 | AIC                |  4792.36        |  4792.33        |  4790           |  4790           |
 | BIC                |  4825.09        |  4825.06        |  4818.64        |  4818.64        |
 
+
 Coefficients of best models in model_outputs['popt']:
 
-| Coefficient   |   LassoCV |   LassoLarsCV |   LassoLarsAIC |   LassoLarsBIC |
-|:--------------|----------:|--------------:|---------------:|---------------:|
-| constant      | 152.133   |     152.133   |      152.133   |      152.133   |
-| age           |  -0       |       0       |        0       |        0       |
-| sex           |  -9.11162 |      -9.13079 |       -9.40617 |       -9.40617 |
-| bmi           |  24.8066  |      24.809   |       24.8419  |       24.8419  |
-| bp            |  13.9806  |      13.9909  |       14.1342  |       14.1342  |
-| s1            |  -4.58713 |      -4.61047 |       -4.94418 |       -4.94418 |
-| s2            |  -0       |       0       |        0       |        0       |
-| s3            | -10.5553  |     -10.5615  |      -10.651   |      -10.651   |
-| s4            |   0       |       0       |        0       |        0       |
-| s5            |  24.2697  |      24.2839  |       24.4841  |       24.4841  |
-| s6            |   2.45869 |       2.46804 |        2.6051  |        2.6051  |
+
+| Feature   |   LassoCV |   LassoLarsCV |   LassoLarsAIC |   LassoLarsBIC |
+|:----------|----------:|--------------:|---------------:|---------------:|
+| const     | 152.133   |     152.133   |      152.133   |      152.133   |
+| age       |  -0       |       0       |        0       |        0       |
+| sex       |  -9.11162 |      -9.13079 |       -9.40617 |       -9.40617 |
+| bmi       |  24.8066  |      24.809   |       24.8419  |       24.8419  |
+| bp        |  13.9806  |      13.9909  |       14.1342  |       14.1342  |
+| s1        |  -4.58713 |      -4.61047 |       -4.94418 |       -4.94418 |
+| s2        |  -0       |       0       |        0       |        0       |
+| s3        | -10.5553  |     -10.5615  |      -10.651   |      -10.651   |
+| s4        |   0       |       0       |        0       |        0       |
+| s5        |  24.2697  |      24.2839  |       24.4841  |       24.4841  |
+| s6        |   2.45869 |       2.46804 |        2.6051  |        2.6051  |
+
+
+Variance Inflation Factors model_outputs['vif']:
+Note: VIF>5 indicates excessive collinearity
+
+
+| Feature   |   LassoCV |   LassoLarsCV |   LassoLarsAIC |   LassoLarsBIC |
+|:----------|----------:|--------------:|---------------:|---------------:|
+| const     |   1       |       1       |        1       |        1       |
+| age       | nan       |     nan       |      nan       |      nan       |
+| sex       |   1.25594 |       1.25594 |        1.25594 |        1.25594 |
+| bmi       |   1.49419 |       1.49419 |        1.49419 |        1.49419 |
+| bp        |   1.39388 |       1.39388 |        1.39388 |        1.39388 |
+| s1        |   1.58065 |       1.58065 |        1.58065 |        1.58065 |
+| s2        | nan       |     nan       |      nan       |      nan       |
+| s3        |   1.66245 |       1.66245 |        1.66245 |        1.66245 |
+| s4        | nan       |     nan       |      nan       |      nan       |
+| s5        |   2.07745 |       2.07745 |        2.07745 |        2.07745 |
+| s6        |   1.45162 |       1.45162 |        1.45162 |        1.45162 |
 ```
 
 Note that the model_objects and model_outputs returned by the lasso function also contain the best-fit sklearn model objects and many other useful outputs as described by help(lasso). All of the optional arguments for the lasso function are also explained by running help(lasso) 
@@ -128,13 +150,28 @@ X.head()
 
 # Use the stepwise function in the stepAIC package
 from stepAIC import stepwise
-best_model, best_features = stepwise(X, y, 
-    criterion='bic', direction='all', standardize='on', verbose='off')
+model_object, model_output = stepwise(X, y, 
+    criterion='bic', direction='all', standardize='on')
 ```
 
 Running the code above produces the following output display of the best fit model:
 ```
-BEST OF ALL POSSIBLE MODELS AFTER REMOVING INSIGNIFICANT PREDICTORS
+Best 10 subsets of features in model_outputs['step_features']:
+
+|   Rank |     AIC |     BIC |   rsq_adj | Features                               |
+|-------:|--------:|--------:|----------:|:---------------------------------------|
+|      0 | 4792.26 | 4816.81 |  0.502997 | ['sex' 'bmi' 'bp' 's3' 's5']           |
+|      1 | 4792.26 | 4816.81 |  0.502997 | ['sex' 'bmi' 'bp' 's3' 's5']           |
+|      2 | 4788.6  | 4817.24 |  0.508193 | ['sex' 'bmi' 'bp' 's1' 's2' 's5']      |
+|      3 | 4789.92 | 4818.56 |  0.506728 | ['sex' 'bmi' 'bp' 's1' 's4' 's5']      |
+|      4 | 4790.12 | 4818.76 |  0.5065   | ['sex' 'bmi' 'bp' 's1' 's3' 's5']      |
+|      5 | 4791.09 | 4819.73 |  0.505419 | ['sex' 'bmi' 'bp' 's2' 's3' 's5']      |
+|      6 | 4793.18 | 4821.82 |  0.503078 | ['sex' 'bmi' 'bp' 's3' 's4' 's5']      |
+|      7 | 4789.32 | 4822.05 |  0.508488 | ['sex' 'bmi' 'bp' 's1' 's2' 's4' 's5'] |
+|      8 | 4789.37 | 4822.1  |  0.508429 | ['sex' 'bmi' 'bp' 's1' 's2' 's5' 's6'] |
+|      9 | 4793.56 | 4822.2  |  0.502647 | ['sex' 'bmi' 'bp' 's3' 's5' 's6']      |
+
+Best of all possible models after removing insignficant features if any:
 Best features:  ['sex', 'bmi', 'bp', 's3', 's5'] 
 
                             OLS Regression Results                            
@@ -142,8 +179,8 @@ Best features:  ['sex', 'bmi', 'bp', 's3', 's5']
 Dep. Variable:                 target   R-squared:                       0.509
 Model:                            OLS   Adj. R-squared:                  0.503
 Method:                 Least Squares   F-statistic:                     90.26
-Date:                Thu, 15 May 2025   Prob (F-statistic):           4.75e-65
-Time:                        20:17:15   Log-Likelihood:                -2390.1
+Date:                Sun, 18 May 2025   Prob (F-statistic):           4.75e-65
+Time:                        20:17:19   Log-Likelihood:                -2390.1
 No. Observations:                 442   AIC:                             4792.
 Df Residuals:                     436   BIC:                             4817.
 Df Model:                           5                                         
@@ -166,6 +203,18 @@ Kurtosis:                       2.678   Cond. No.                         2.33
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Variance Inflation Factors of selected_features:
+Note: VIF>5 indicates excessive collinearity
+
+| Feature   |     VIF |
+|:----------|--------:|
+| const     | 1       |
+| sex       | 1.23788 |
+| bmi       | 1.44328 |
+| bp        | 1.34724 |
+| s3        | 1.45888 |
+| s5        | 1.46057 |
 ```
 
 Note that Example 2 using stepwise regression found a more parsimonious model with 5 features (compared with 7 features using Lasso regression), and similar skill compared with using Lasso regression for the same diabetes data set.
