@@ -38,7 +38,9 @@ The **ridge** function in the stepAIC package provides output of regression mode
 - Ridge_AIC: Ridge regression using AIC as the scoring criterion to select alpha by trial
 - Ridge_BIC: Ridge regression using BIC as the scoring criterion to select alpha by trial
 
-Ridge regression adds an L2 penalty to the loss function, which is the sum of the squares of the coefficients. This penalty shrinks the coefficients towards zero but does not force them to be exactly zero. Ridge regression is useful for dealing with multicollinearity, where predictors are highly correlated, and when all candidate features should be included in the model. 
+Ridge regression adds an L2 penalty to the loss function, which is the sum of the squares of the coefficients. This penalty shrinks the coefficients towards zero but does not force them to be exactly zero. 
+
+Ridge regression is useful for dealing with multicollinearity, where predictors are highly correlated, and when all candidate features should be included in the model. 
 
 ### Comparison of Stepwise, Lasso, and Ridge
 
