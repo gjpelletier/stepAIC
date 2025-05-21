@@ -24,7 +24,11 @@ The **lasso** function in the stepAIC package provides output of regression mode
 - LassoLarsIC using AIC: Lasso using Least Angle Regression with Akaike Information Criterion
 - LassoLarsIC using BIC: Lasso using Least Angle Regression with Bayesian Information Criterion
 
+Lasso (Least Absolute Shrinkage and Selection Operator) adds an L1 penalty to the loss function. This penalty encourages sparsity in the model, meaning that some coefficients will be exactly zero, effectively removing the corresponding predictors from the model. 
+
 Lasso linear regression includes a penalty term to the standard least squares objective function. The penalty term is a sum of the absolute values of the regression coefficients multiplied by a hyperparameter, denoted as "alpha". The **lasso** function finds the optimum value of alpha for each of the four different methods listed above. The alpha determines the amount of shrinkage applied to the model coefficients. As alpha increases, the coefficients are pushed towards zero, and some may become exactly zero, effectively eliminating those features from the model. 
+
+Lasso regression is useful for dealing with multicollinearity, where predictors are highly correlated, and when an optimal subset of the candidate features should be included in the model. 
 
 ### Ridge
 
@@ -33,6 +37,14 @@ The **ridge** function in the stepAIC package provides output of regression mode
 - RidgeCV: Ridge regression with default cross-validation using the MSE as the scoring criterion to select alpha
 - Ridge_AIC: Ridge regression using AIC as the scoring criterion to select alpha by trial
 - Ridge_BIC: Ridge regression using BIC as the scoring criterion to select alpha by trial
+
+Ridge regression adds an L2 penalty to the loss function, which is the sum of the squares of the coefficients. This penalty shrinks the coefficients towards zero but does not force them to be exactly zero. Ridge regression is useful for dealing with multicollinearity, where predictors are highly correlated, and when all candidate features should be included in the model. 
+
+### Comparison of Stepwise, Lasso, and Ridge
+
+- Feature selection: Lasso performs explicit feature selection by setting some coefficients to zero, while Ridge shrinks coefficients but retains all predictors. Stepwise regression also performs feature selection but can be less stable than Lasso. 
+- Regularization: Both Lasso and Ridge are regularization techniques that prevent overfitting, but they do so differently. Lasso is more likely to produce sparse models, while Ridge is more likely to shrink coefficients smoothly. 
+- Computational cost: Stepwise regression can be computationally expensive, especially for large datasets. Lasso and Ridge can be solved more efficiently using optimization algorithms. 
 
 ### AIC vs BIC
 
