@@ -250,7 +250,7 @@ Note that Example 2 using stepwise regression found a more parsimonious model wi
 
 Also note that the model_object and model_output returned by the stepwise function also provide the best-fitted statsmodels model object and a dictionary of many useful regression results and summary statistics as explained by running help(stepwise).
 
-## Example 1. Use Ridge regression to analyze diabetes data
+## Example 3. Use Ridge regression to analyze diabetes data
 
 In this example we will use Ridge regression to analyze the diabetes data available from sklearn. The ridge function uses the sklearn.processing StandardScaler to standardize the X values by default. Then the ridge function uses the standardized X values to find each of the best fit models using RidgeCV (default using MSE for optimization), and Ridge using AIC and BIC for optimization.
 
