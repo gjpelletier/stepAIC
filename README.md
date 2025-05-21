@@ -1,9 +1,9 @@
 
-# stepAIC - Stepwise and Lasso linear regression to minimimize AIC or BIC in Python and Jupyter Notebook
+# stepAIC - Stepwise, Lasso, and Ridge linear regression to minimimize AIC or BIC in Python and Jupyter Notebook
 
-The stepAIC package includes two functions, **stepwise** and **lasso**, to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a linear regression model.
+The stepAIC package includes three functions, **stepwise**, and **lasso**, and **ridge*, to find the optimum set of predictor variables that minimizes either the Akaike Information Criterion (AIC, default) or Bayesian Information Criterion (BIC, optional) in a linear regression model.
 
-The choice between Lasso regression and stepwise regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso regression is generally preferred for its efficiency and ability to handle large datasets without overfitting. However, stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
+The choice between Lasso, Ridge, or Stepwise regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso and Ridge regression is generally preferred for their efficiency and ability to handle large datasets without overfitting. However, Stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
 
 ### Stepwise
 
@@ -26,6 +26,14 @@ The **lasso** function in the stepAIC package provides output of regression mode
 
 Lasso linear regression includes a penalty term to the standard least squares objective function. The penalty term is a sum of the absolute values of the regression coefficients multiplied by a hyperparameter, denoted as "alpha". The **lasso** function finds the optimum value of alpha for each of the four different methods listed above. The alpha determines the amount of shrinkage applied to the model coefficients. As alpha increases, the coefficients are pushed towards zero, and some may become exactly zero, effectively eliminating those features from the model. 
 
+### Ridge
+
+The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following four methods from the sklearn.linear_model package:
+
+- RidgeCV: Ridge regression with default cross-validation using the MSE as the scoring criterion to select alpha
+- Ridge_AIC: Ridge regression using AIC as the scoring criterion to select alpha by trial
+- Ridge_BIC: Ridge regression using BIC as the scoring criterion to select alpha by trial
+
 ### AIC vs BIC
 
 Using AIC as the criterion is the default in the stepAIC fuction. The user also has the option to use the BIC as the criterion instead. AIC is considered to be a useful critierion in stepwise regression. However, BIC is generally considered to be better than AIC for several reasons:
@@ -35,9 +43,17 @@ Using AIC as the criterion is the default in the stepAIC fuction. The user also 
 - Model Recovery: Studies suggest that BIC tends to recover the true model more effectively than AIC, particularly in scenarios where the sample size is large.
 While both criteria are useful for model selection, BIC is often preferred for its stricter criteria, which helps in avoiding overfitting and improving model interpretability
 
-The stepAIC function requires that you have already installed numpy, pandas, scikit-learn, tabulate, and statsmodels packages. We also recommend that you have installed seaborn and matplotlib.
+### Limitations of Ridge regression for feature selection and the utility of AIC and BIC
+
+Unlike Lasso regression, Ridge regression does not have zeroing of selected coefficients as a goal. Therefore, Ridge regression generally does not select a subset of features for the final best model. Instead, Ridge regression retains all of the candiate features in the input data set and has the goal of minimizing the coefficient values as a strategy to reduce the variance inflation factors to mitigate the effects of multicollinearity.
+
+AIC and BIC have limited value in optimizing Ridge regression. The AIC and BIC in Ridge regression is not sensitive to the alpha parameter because the AIC and BIC values are strongly affected by the number of model parameters. As the alpha parameter is adjusted, the AIC and BIC values change by a relatively small amount depending on the variance of the residuals at each value of alpha. This means that the AIC and BIC values across a wide range of alpha values do not penalize the model for having too many parameters in Ridge regression. Using AIC and BIC have the effect of choosing the lowest value of alpha, which is similar to performing ordinary linear regression without regularaization and with no mitigation of multicollinearity.
+
+If feature selection is the goal of the analysis, then Stepwise or Lasso regression methods are generally better than Ridge regression for that purpose. If your analysis requires that all candidate features are retained in the final model, then Ridge regression is ideal for that purpose.
 
 ## Installation for Python or Jupyter Notebook
+
+The stepAIC functions require that you have already installed numpy, pandas, scikit-learn, tabulate, matplotlib, and statsmodels packages. 
 
 If you have not already installed stepAIC, enter the following with pip or !pip in your notebook or terminal:<br>
 ```
