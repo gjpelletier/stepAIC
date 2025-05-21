@@ -28,7 +28,7 @@ Lasso linear regression includes a penalty term to the standard least squares ob
 
 ### Ridge
 
-The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following four methods from the sklearn.linear_model package:
+The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following three methods from the sklearn.linear_model package:
 
 - RidgeCV: Ridge regression with default cross-validation using the MSE as the scoring criterion to select alpha
 - Ridge_AIC: Ridge regression using AIC as the scoring criterion to select alpha by trial
