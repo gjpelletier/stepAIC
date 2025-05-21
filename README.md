@@ -34,7 +34,7 @@ Lasso regression is useful for dealing with multicollinearity, where predictors 
 
 The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following three methods from the sklearn.linear_model package:
 
-- RidgeCV: Ridge regression with default cross-validation using the MSE as the scoring criterion to select alpha
+- RidgeCV: RidgeCV regression with default cross-validation using the MSE as the scoring criterion to select alpha
 - Ridge_AIC: Ridge regression using AIC as the scoring criterion to select alpha by trial
 - Ridge_BIC: Ridge regression using BIC as the scoring criterion to select alpha by trial
 
@@ -63,7 +63,7 @@ Unlike Lasso regression, Ridge regression does not have zeroing of selected coef
 
 AIC and BIC have limited value in optimizing Ridge regression. The AIC and BIC in Ridge regression is not sensitive to the alpha parameter because the AIC and BIC values are strongly affected by the number of model parameters. As the alpha parameter is adjusted, the AIC and BIC values change by a relatively small amount depending on the variance of the residuals at each value of alpha. This means that the AIC and BIC values across a wide range of alpha values do not penalize the model for having too many parameters in Ridge regression. Using AIC and BIC have the effect of choosing the lowest value of alpha, which is similar to performing ordinary linear regression without regularaization and with no mitigation of multicollinearity.
 
-If feature selection is the goal of the analysis, then Stepwise or Lasso regression methods are generally better than Ridge regression for that purpose. If your analysis requires that all candidate features are retained in the final model, then Ridge regression is ideal for that purpose.
+If feature selection is the goal of the analysis, then Stepwise or Lasso regression methods are generally better than Ridge regression for that purpose. If your analysis requires that all candidate features are retained in the final model, then Ridge regression is ideal for that purpose using the **ridge** results for RidgCV.
 
 ## Installation for Python or Jupyter Notebook
 
