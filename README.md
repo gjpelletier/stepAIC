@@ -158,8 +158,6 @@ Note: VIF>5 indicates excessive collinearity
 | s6        |   1.45162 |       1.45162 |        1.45162 |        1.45162 |
 ```
 
-Note that the most parsimonious model was found using LassoLarsIC with BIC as the criterion. If the goal of the study is to find the most parsimonious model with the smallest subset of features, then using BIC as the criterion appears to provide the best results.
-
 The model_objects and model_outputs returned by the lasso function also contain the best-fit sklearn model objects and many other useful outputs as described by help(lasso). All of the optional arguments for the lasso function are also explained by running help(lasso) 
 
 ## Example 2. Use Stepwise regression to analyze diabetes data
