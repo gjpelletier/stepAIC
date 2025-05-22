@@ -51,7 +51,7 @@ Ridge regression is useful for dealing with multicollinearity, where predictors 
 
 ### AIC vs BIC
 
-Using AIC as the criterion is the default in the stepAIC **stepwise** fuction. The user also has the option to use the BIC as the criterion instead. AIC is considered to be a useful critierion in stepwise regression. However, BIC is generally considered to be better than AIC for several reasons:
+Using AIC as the criterion is the default in the **stepwise** fuction. The user also has the option to use the BIC as the criterion instead. AIC is considered to be a useful critierion in stepwise regression. However, BIC is generally considered to be better than AIC for several reasons:
 
 - Penalty for Complexity: BIC penalizes models more heavily for the number of parameters, making it more conservative and less likely to overfit, especially with larger sample sizes.
 - Model Selection: BIC is particularly useful when the sample size is large, as it encourages simpler models that are less likely to capture noise.
