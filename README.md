@@ -37,6 +37,7 @@ The **ridge** function in the stepAIC package provides output of regression mode
 - RidgeCV: RidgeCV regression with default cross-validation using the MSE as the scoring criterion to select alpha
 - Ridge_AIC: Ridge regression using AIC as the scoring criterion to select alpha by trial
 - Ridge_BIC: Ridge regression using BIC as the scoring criterion to select alpha by trial
+- RidgeVIF: Ridge regression using target VIF to select alpha by trial
 
 Ridge regression adds an L2 penalty to the loss function, which is the product of the regularization hyperparameter and the sum of the squares of the coefficients. This penalty shrinks the coefficients towards zero but does not force them to be exactly zero. 
 
@@ -64,6 +65,15 @@ Unlike Lasso regression, Ridge regression does not have zeroing of selected coef
 AIC and BIC have limited value in optimizing Ridge regression. The AIC and BIC in Ridge regression is not sensitive to the alpha parameter because the AIC and BIC values are strongly affected by the number of model parameters. As the alpha parameter is adjusted, the AIC and BIC values change by a relatively small amount depending on the variance of the residuals at each value of alpha. This means that the AIC and BIC values across a wide range of alpha values do not penalize the model for having too many parameters in Ridge regression. Using AIC and BIC have the effect of choosing the lowest value of alpha, which is similar to performing ordinary linear regression without regularaization and with no mitigation of multicollinearity.
 
 If feature selection is the goal of the analysis, then Stepwise or Lasso regression methods are generally better than Ridge regression for that purpose. If your analysis requires that all candidate features are retained in the final model, then Ridge regression is ideal for that purpose using the **ridge** results for RidgCV.
+
+### Acceptable VIF as the target for Ridge regression
+
+Ridge regression reduces the Variance Inflation Factors of the features by adding a penalty term to the ordinary least squares regression. The magnitude of the penalty term is related to the regularization paramter (alpha) and the sum of the squared coefficients. At very low values of alpha there is negligible penalty and the Ridge regression results are practically the same as OLS. As the alpha value is increased, the penalty increases and the VIF values of the features decreases, which mitigates the problem of multicollinearity.
+
+Cross-validated ridge regression (e.g. using RidgeCV) does not always result in acceptable multicollinearity of data features as indicated by VIF. While cross-validation helps in fine-tuning the regression coefficients, it does not always result in VIF values close to 1. Ideally the VIF of the features should be as close as possibe to VIF=1. This can be achieved using a trial and error method of evaluating the VIF values of the model features over a range of alpha values. 
+
+The **ridge** function in stepAIC includes an algorithm (RidgeVIF) to find the model with the optimum value of alpha that will result in VIF values as close as possible to a user-specified target VIF (default target VIF=1.0). This assures that there will be acceptable multicollinearity for all features. The trade-off is that this algorithm reduces the model coefficients such that the target VIF will be achieved. The user has the option to specify any target for VIF to explore the balance between VIF and coefficient values.  
+
 
 ## Installation for Python or Jupyter Notebook
 
