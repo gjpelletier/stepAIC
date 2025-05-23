@@ -1,5 +1,5 @@
 
-# stepAIC - Stepwise, Lasso, and Ridge linear regression to optimize AIC, BIC, or VIF in Python and Jupyter Notebook
+# Stepwise, Lasso, and Ridge linear regression to optimize AIC, BIC, or VIF in Python and Jupyter Notebook
 
 The stepAIC package includes three functions, **stepwise**, **lasso**, and **ridge**, to find the optimum set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a linear regression model.
 
