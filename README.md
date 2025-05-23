@@ -19,7 +19,7 @@ Either the AIC, BIC, or adjusted rsquared may be used as the criterion with forw
 
 The **lasso** function in the stepAIC package provides output of regression models and summary statistics using the following four methods from the sklearn.linear_model package:
 
-- LassoCV: Lasso using Cross-Validation with coordinate descent  
+- LassoCV: Lasso using Cross-Validation with coordinate descent to optimize alpha
 - LassoLarsCV: Lasso using Cross-Validation with Least Angle Regression
 - LassoLarsIC using AIC: Lasso using Least Angle Regression with Akaike Information Criterion
 - LassoLarsIC using BIC: Lasso using Least Angle Regression with Bayesian Information Criterion
