@@ -34,10 +34,10 @@ Lasso regression is useful for dealing with multicollinearity, where predictors 
 
 The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following three methods from the sklearn.linear_model package:
 
-- RidgeCV: RidgeCV regression with default cross-validation using the MSE as the scoring criterion to select alpha
-- RidgeAIC: Ridge regression using AIC as the scoring criterion to select alpha by trial
-- RidgeBIC: Ridge regression using BIC as the scoring criterion to select alpha by trial
-- RidgeVIF: Ridge regression using target VIF to select alpha by trial
+- RidgeCV: RidgeCV regression with default cross-validation using the MSE as the scoring criterion to optimize alpha
+- RidgeAIC: Ridge regression using AIC as the scoring criterion to optimize alpha by trial
+- RidgeBIC: Ridge regression using BIC as the scoring criterion to optimize alpha by trial
+- RidgeVIF: Ridge regression using target VIF to optimize alpha by trial
 
 Ridge regression adds an L2 penalty to the loss function, which is the product of the regularization hyperparameter and the sum of the squares of the coefficients. This penalty shrinks the coefficients towards zero but does not force them to be exactly zero. 
 
