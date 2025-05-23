@@ -24,7 +24,7 @@ The **lasso** function in the stepAIC package provides output of regression mode
 - LassoLarsIC using AIC: Lasso using Least Angle Regression with Akaike Information Criterion
 - LassoLarsIC using BIC: Lasso using Least Angle Regression with Bayesian Information Criterion
 
-Lasso (Least Absolute Shrinkage and Selection Operator) adds an L1 penalty to the loss function. This penalty encourages sparsity in the model, meaning that some coefficients will be exactly zero, effectively removing the corresponding predictors from the model. 
+Lasso (Least Absolute Shrinkage and Selection Operator) adds a penalty to the loss function. This penalty encourages sparsity in the model, meaning that some coefficients will be exactly zero, effectively removing the corresponding predictors from the model. 
 
 Lasso linear regression includes a penalty term to the standard least squares objective function. The penalty term is a sum of the absolute values of the regression coefficients multiplied by a hyperparameter, denoted as "alpha". The **lasso** function finds the optimum value of alpha for each of the four different methods listed above. The alpha determines the amount of shrinkage applied to the model coefficients. As alpha increases, the coefficients are pushed towards zero, and some may become exactly zero, effectively eliminating those features from the model. 
 
