@@ -13,7 +13,7 @@ The **stepwise** function in the stepAIC package has the option to use either fo
 - Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC)
 - All subsets of possible combinations of predictor features to find the best of all possible models (up to 20 candidate predictors)
 
-Either the AIC or BIC may be used as the criterion with forward, backward, or all subsets. In addition, there is an option to start with all features and eliminate any features with p-values<p_threshold based only on the p-values of the coefficient. The stepwise algorithm also has the option (default) to remove any non-signficant predictors after either a forward, backward, or all subsets search using the AIC or BIC criterion. 
+Either the AIC or BIC may be used as the criterion with forward, backward, or all subsets. In addition, there is an option to start with all features and eliminate any features with p-values<p_threshold based only on the p-values of the coefficients. The stepwise algorithm also has the option (default) to remove any non-signficant predictors after either a forward, backward, or all subsets search using the AIC or BIC criterion. 
 
 ### Lasso
 
