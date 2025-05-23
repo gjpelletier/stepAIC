@@ -9,8 +9,8 @@ The choice between Lasso, Ridge, or Stepwise regression depends on the specific 
 
 The **stepwise** function in the stepAIC package has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
 
-- Forward selection (default) starts with no predictors and adds predictors as long as it improves the model (reduces AIC or BIC) 
-- Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC)
+- Forward selection (default) starts with no predictors and adds predictors as long as it improves the model (reduces AIC or BIC, or increases adjusted rsquared) 
+- Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC, or increases adjusted rsquared)
 - All subsets of possible combinations of predictor features to find the best of all possible models (up to 20 candidate predictors)
 
 Either the AIC, BIC, or adjusted rsquared may be used as the criterion with forward, backward, or all subsets. In addition, there is an option to find all features with p-values<p_threshold through backward elimination based only on the p-values of the coefficients. The stepwise algorithm also has the option (default) to remove any non-signficant predictors after either a forward, backward, or all subsets search using the AIC, BIC, or adjusted rsquared criterion. 
