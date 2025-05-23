@@ -7,7 +7,7 @@ The choice between Lasso, Ridge, or Stepwise regression depends on the specific 
 
 ### Stepwise
 
-The **stepwise** function in the stepAIC module has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
+The **stepwise** function in the stepAIC module has the option to use either forward selection (default), backward selection, or all subsets of possible combinations for the optimum set of predictor variables as follows:
 
 - Forward selection (default) starts with no predictors and adds predictors as long as it improves the model (reduces AIC or BIC, or increases adjusted rsquared) 
 - Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC, or increases adjusted rsquared)
