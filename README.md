@@ -1,13 +1,13 @@
 
 # Stepwise, Lasso, and Ridge linear regression to optimize AIC, BIC, or VIF in Python and Jupyter Notebook
 
-The stepAIC library includes three main functions, **stepwise**, **lasso**, and **ridge**, to find the optimum set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a multiple linear regression model.
+The stepAIC module includes three main functions, **stepwise**, **lasso**, and **ridge**, to find the optimum set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a multiple linear regression model.
 
 The choice between Lasso, Ridge, or Stepwise regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso and Ridge regression are generally preferred for their efficiency and ability to handle large datasets without overfitting. However, Stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
 
 ### Stepwise
 
-The **stepwise** function in the stepAIC package has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
+The **stepwise** function in the stepAIC module has the option to use either forward selection (default), backward selection, or all combinations for the optimum set of predictor variables as follows:
 
 - Forward selection (default) starts with no predictors and adds predictors as long as it improves the model (reduces AIC or BIC, or increases adjusted rsquared) 
 - Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC, or increases adjusted rsquared)
@@ -17,7 +17,7 @@ Either the AIC, BIC, or adjusted rsquared may be used as the criterion with forw
 
 ### Lasso
 
-The **lasso** function in the stepAIC library provides output of regression models and summary statistics using the following methods:
+The **lasso** function in the stepAIC module provides output of regression models and summary statistics using the following methods:
 
 - LassoCV: Lasso using Cross-Validation with coordinate descent to optimize alpha
 - LassoLarsCV: Lasso using Cross-Validation with Least Angle Regression
@@ -32,7 +32,7 @@ Lasso regression is useful for dealing with multicollinearity, where predictors 
 
 ### Ridge
 
-The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following methods:
+The **ridge** function in the stepAIC module provides output of regression models and summary statistics using the following methods:
 
 - RidgeCV: RidgeCV regression with default cross-validation using the MSE as the scoring criterion to optimize alpha
 - RidgeAIC: Ridge regression using AIC as the scoring criterion to optimize alpha by trial
@@ -77,7 +77,7 @@ The **ridge** function in stepAIC includes an algorithm (RidgeVIF) to find the m
 
 ## Installation for Python or Jupyter Notebook
 
-The stepAIC functions require that you have already installed numpy, pandas, scikit-learn, tabulate, matplotlib, and statsmodels packages. 
+The stepAIC module require that you have already installed numpy, pandas, scikit-learn, tabulate, matplotlib, and statsmodels packages. 
 
 If you have not already installed stepAIC, enter the following with pip or !pip in your notebook or terminal:<br>
 ```
@@ -89,9 +89,9 @@ if you are upgrading from a previous installation of stepAIC, enter the followin
 pip install git+https://github.com/gjpelletier/stepAIC.git --upgrade
 ```
 
-Next import the stepAIC function as follows in your notebook or python code:<br>
+Next import the **stepwise**, **lasso**, and **ridge** functions from the stepAIC module as follows in your notebook or python code:<br>
 ```
-from stepAIC import stepwise, lasso
+from stepAIC import stepwise, lasso, ridge
 ```
 
 ## Example 1. Use Lasso regression to analyze diabetes data
@@ -104,7 +104,7 @@ Run the following code:
 from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
 
-# Use the lasso function in the stepAIC package
+# Use the lasso function in the stepAIC module
 from stepAIC import lasso
 model_objects, model_outputs = lasso(X, y)
 ```
@@ -185,7 +185,7 @@ Run the following code:
 from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
 
-# Use the stepwise function in the stepAIC package
+# Use the stepwise function in the stepAIC module
 from stepAIC import stepwise
 model_object, model_output = stepwise(X, y, 
     criterion='bic', direction='all', standardize='on')
@@ -268,7 +268,7 @@ Run the following code:
 from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
 
-# Use the ridge function in the stepAIC package
+# Use the ridge function in the stepAIC module
 from stepAIC import ridge
 model_objects, model_outputs = ridge(X, y)
 ```
