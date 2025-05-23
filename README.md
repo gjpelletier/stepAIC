@@ -262,7 +262,7 @@ Also note that the model_object and model_output returned by the stepwise functi
 
 ## Example 3. Use Ridge regression to analyze diabetes data
 
-In this example we will use Ridge regression to analyze the diabetes data available from sklearn. The ridge function uses the sklearn.processing StandardScaler to standardize the X values by default. Then the ridge function uses the standardized X values to find each of the best fit models using RidgeCV (default using MSE for optimization), and Ridge using AIC and BIC for optimization.
+In this example we will use Ridge regression to analyze the diabetes data available from sklearn. The ridge function uses the sklearn.processing StandardScaler to standardize the X values by default. Then the ridge function uses the standardized X values to find each of the best fit models using RidgeCV, and Ridge using AIC, BIC, and VIF for optimization.
 
 Run the following code:
 ```
