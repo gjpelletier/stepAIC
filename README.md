@@ -103,7 +103,6 @@ Run the following code:
 # Read X and y from the sklearn diabetes data set
 from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
-X.head()
 
 # Use the lasso function in the stepAIC package
 from stepAIC import lasso
@@ -185,7 +184,6 @@ Run the following code:
 # Read X and y from the sklearn diabetes data set
 from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
-X.head()
 
 # Use the stepwise function in the stepAIC package
 from stepAIC import stepwise
@@ -269,7 +267,6 @@ Run the following code:
 # Read X and y from the sklearn diabetes data set
 from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
-X.head()
 
 # Use the ridge function in the stepAIC package
 from stepAIC import ridge
