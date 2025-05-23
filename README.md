@@ -1,7 +1,7 @@
 
 # Stepwise, Lasso, and Ridge linear regression to optimize AIC, BIC, or VIF in Python and Jupyter Notebook
 
-The stepAIC package includes three functions, **stepwise**, **lasso**, and **ridge**, to find the optimum set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a linear regression model.
+The stepAIC library includes three main functions, **stepwise**, **lasso**, and **ridge**, to find the optimum set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a multiple linear regression model.
 
 The choice between Lasso, Ridge, or Stepwise regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso and Ridge regression are generally preferred for their efficiency and ability to handle large datasets without overfitting. However, Stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
 
@@ -17,7 +17,7 @@ Either the AIC, BIC, or adjusted rsquared may be used as the criterion with forw
 
 ### Lasso
 
-The **lasso** function in the stepAIC package provides output of regression models and summary statistics using the following four methods from the sklearn.linear_model package:
+The **lasso** function in the stepAIC library provides output of regression models and summary statistics using the following methods:
 
 - LassoCV: Lasso using Cross-Validation with coordinate descent to optimize alpha
 - LassoLarsCV: Lasso using Cross-Validation with Least Angle Regression
@@ -32,7 +32,7 @@ Lasso regression is useful for dealing with multicollinearity, where predictors 
 
 ### Ridge
 
-The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following three methods from the sklearn.linear_model package:
+The **ridge** function in the stepAIC package provides output of regression models and summary statistics using the following methods:
 
 - RidgeCV: RidgeCV regression with default cross-validation using the MSE as the scoring criterion to optimize alpha
 - RidgeAIC: Ridge regression using AIC as the scoring criterion to optimize alpha by trial
