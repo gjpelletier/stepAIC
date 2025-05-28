@@ -216,8 +216,8 @@ Best features:  ['sex', 'bmi', 'bp', 's3', 's5']
 Dep. Variable:                 target   R-squared:                       0.509
 Model:                            OLS   Adj. R-squared:                  0.503
 Method:                 Least Squares   F-statistic:                     90.26
-Date:                Sun, 18 May 2025   Prob (F-statistic):           4.75e-65
-Time:                        20:17:19   Log-Likelihood:                -2390.1
+Date:                Tue, 27 May 2025   Prob (F-statistic):           4.75e-65
+Time:                        17:53:07   Log-Likelihood:                -2390.1
 No. Observations:                 442   AIC:                             4792.
 Df Residuals:                     436   BIC:                             4817.
 Df Model:                           5                                         
@@ -280,36 +280,36 @@ Ridge regression statistics of best models in model_outputs['stats']:
 
 | Statistic          |         RidgeCV |        RidgeAIC |        RidgeBIC |        RidgeVIF |
 |:-------------------|----------------:|----------------:|----------------:|----------------:|
-| alpha              |     1.81242     |     1e-06       |     1e-06       |    40.1424      |
-| r-squared          |     0.517348    |     0.517748    |     0.517748    |     0.512928    |
-| adjusted r-squared |     0.505001    |     0.505412    |     0.505412    |     0.500468    |
+| alpha              |     1.82499     |     0.001       |     0.001       |    56.3314      |
+| r-squared          |     0.517344    |     0.517748    |     0.517748    |     0.511384    |
+| adjusted r-squared |     0.504997    |     0.505412    |     0.505412    |     0.498884    |
 | nobs               |   442           |   442           |   442           |   442           |
 | df residuals       |   431           |   431           |   431           |   431           |
 | df model           |    10           |    10           |    10           |    10           |
-| F-statistic        |    46.1983      |    46.2724      |    46.2724      |    45.388       |
+| F-statistic        |    46.1976      |    46.2724      |    46.2724      |    45.1082      |
 | Prob (F-statistic) |     1.11022e-16 |     1.11022e-16 |     1.11022e-16 |     1.11022e-16 |
-| RMSE               |    53.4983      |    53.4761      |    53.4761      |    53.7427      |
-| Log-Likelihood     | -2386.18        | -2385.99        | -2385.99        | -2388.19        |
-| AIC                |  4794.35        |  4793.99        |  4793.99        |  4798.38        |
-| BIC                |  4839.36        |  4838.99        |  4838.99        |  4843.39        |
+| RMSE               |    53.4985      |    53.4761      |    53.4761      |    53.8279      |
+| Log-Likelihood     | -2386.18        | -2385.99        | -2385.99        | -2388.89        |
+| AIC                |  4794.36        |  4793.99        |  4793.99        |  4799.78        |
+| BIC                |  4839.36        |  4838.99        |  4838.99        |  4844.79        |
 
 
 Coefficients of best models in model_outputs['popt']:
 
 
-| Feature   |    RidgeCV |   RidgeAIC |   RidgeBIC |    RidgeVIF |
-|:----------|-----------:|-----------:|-----------:|------------:|
-| const     | 152.133    | 152.133    | 152.133    | 152.133     |
-| age       |  -0.403896 |  -0.476121 |  -0.476121 |   0.0298568 |
-| sex       | -11.2846   | -11.4069   | -11.4069   |  -9.9727    |
-| bmi       |  24.7844   |  24.7265   |  24.7265   |  23.4458    |
-| bp        |  15.3371   |  15.4294   |  15.4294   |  14.4353    |
-| s1        | -25.917    | -37.6799   | -37.6799   |  -4.26201   |
-| s2        |  13.345    |  22.6762   |  22.6762   |  -3.22351   |
-| s3        |  -0.363515 |   4.80613  |   4.80613  |  -8.92286   |
-| s4        |   7.04127  |   8.42204  |   8.42204  |   5.48075   |
-| s5        |  31.24     |  35.7344   |  35.7344   |  21.3724    |
-| s6        |   3.29929  |   3.21667  |   3.21667  |   4.0669    |
+| Feature   |    RidgeCV |   RidgeAIC |   RidgeBIC |   RidgeVIF |
+|:----------|-----------:|-----------:|-----------:|-----------:|
+| const     | 152.133    | 152.133    | 152.133    | 152.133    |
+| age       |  -0.403518 |  -0.476067 |  -0.476067 |   0.154081 |
+| sex       | -11.2839   | -11.4068   | -11.4068   |  -9.51634  |
+| bmi       |  24.7845   |  24.7266   |  24.7266   |  22.845    |
+| bp        |  15.3365   |  15.4293   |  15.4293   |  14.1158   |
+| s1        | -25.8619   | -37.6704   | -37.6704   |  -3.3104   |
+| s2        |  13.3014   |  22.6685   |  22.6685   |  -3.63136  |
+| s3        |  -0.387542 |   4.8019   |   4.8019   |  -9.05321  |
+| s4        |   7.03503  |   8.42088  |   8.42088  |   5.56865  |
+| s5        |  31.2187   |  35.7308   |  35.7308   |  20.4311   |
+| s6        |   3.29976  |   3.21673  |   3.21673  |   4.28903  |
 
 
 Variance Inflation Factors model_outputs['vif']:
@@ -318,16 +318,16 @@ Note: VIF>5 indicates excessive collinearity
 
 | Feature   |   RidgeCV |   RidgeAIC |   RidgeBIC |   RidgeVIF |
 |:----------|----------:|-----------:|-----------:|-----------:|
-| age       |   1.20339 |    1.21731 |    1.21731 |   0.969164 |
-| sex       |   1.26127 |    1.27807 |    1.27807 |   0.98948  |
-| bmi       |   1.48219 |    1.50944 |    1.50944 |   1.11454  |
-| bp        |   1.43751 |    1.45943 |    1.45943 |   1.08991  |
-| s1        |  27.253   |   59.2025  |   59.2025  |   0.72579  |
-| s2        |  18.9152  |   39.1934  |   39.1934  |   1.02663  |
-| s3        |   8.71753 |   15.4021  |   15.4021  |   1.25534  |
-| s4        |   7.62585 |    8.89099 |    8.89099 |   1.88073  |
-| s5        |   5.57408 |   10.076   |   10.076   |   1.21414  |
-| s6        |   1.46403 |    1.48462 |    1.48462 |   1.12225  |
+| age       |   1.20329 |    1.2173  |    1.2173  |   0.891419 |
+| sex       |   1.26116 |    1.27806 |    1.27806 |   0.903376 |
+| bmi       |   1.48201 |    1.50942 |    1.50942 |   1.00434  |
+| bp        |   1.43737 |    1.45942 |    1.45942 |   0.983557 |
+| s1        |  27.1324  |   59.1714  |   59.1714  |   0.505117 |
+| s2        |  18.8383  |   39.1737  |   39.1737  |   0.75467  |
+| s3        |   8.69153 |   15.3958  |   15.3958  |   0.966987 |
+| s4        |   7.6191  |    8.89004 |    8.89004 |   1.32967  |
+| s5        |   5.55691 |   10.0716  |   10.0716  |   1.0413   |
+| s6        |   1.46389 |    1.48461 |    1.48461 |   1.01427  |
 ```
 
 The VIF results using RidgeCV show substantially reduced multicollinearity (2 features with VIF>10) compared with results of Ridge_AIC and Ridge_BIC (4 features with VIF>10). However, the multicollinearity for RidgeCV, RidgeAIC, and RidgeBIC is excessive. Using AIC and BIC to optimize the ridge regression is especially problematic. This is because AIC and BIC have limited value in optimizing Ridge regression. The lowest AIC and BIC values occur at the lowest vales of alpha, which is similar to performing ordinary linear regression with no regularization and no reduction in VIF. The AIC and BIC in Ridge regression is not sensitive to the alpha parameter because the AIC and BIC values are strongly affected by the number of model parameters. As the alpha parameter is adjusted, the AIC and BIC values change by a relatively small amount depending on the variance of the residuals at each value of alpha. This means that the AIC and BIC values across a wide range of alpha values do not penalize the model for having too many parameters in Ridge regression.
