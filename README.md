@@ -63,7 +63,7 @@ Elastic regression, also know as Elastic Net, is a regularization technique that
 
 ### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
 
-- Feature selection: Lasso performs explicit feature selection by setting some coefficients to zero, while Ridge shrinks coefficients but retains all predictors. Elastic Net balances the features of Lasso and Ridge and is able to do feature selection if the optimum L1-ratio is close to 1. Stepwise regression also performs feature selection but can be less stable than Lasso. 
+- Feature selection: Lasso performs explicit feature selection by setting some coefficients to zero, while Ridge shrinks coefficients but retains all predictors. Elastic Net balances the features of Lasso and Ridge and is able to do feature selection. Stepwise regression also performs feature selection but can be less stable than Lasso. 
 - Regularization: Lasso, Ridge, and Elastic Net are regularization techniques that prevent overfitting, but they do so differently. Lasso is more likely to produce sparse models, while Ridge is more likely to shrink coefficients smoothly. Elastic Net balances the capabilities of Lasso and Ridge.
 - Computational cost: Stepwise regression can be computationally expensive, especially for large datasets. Lasso, Ridge, and Elastic Net can be solved more efficiently using optimization algorithms. 
 
