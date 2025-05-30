@@ -5,6 +5,16 @@ The stepAIC module includes four main functions, **stepwise**, **lasso**, **ridg
 
 The choice between Lasso, Ridge, Elastic Net, or Stepwise regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso, Ridge, and Elastic Net regression are generally preferred for their efficiency and ability to handle large datasets without overfitting. However, Stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
 
+The functions in the stepAIC module use regression solvers from statsmodels.OLS and sklearn.linear_model, and make it easier to apply those methods. 
+
+In one line of python code the user can display and save the output of the following:
+
+- regression summary statistics (e.g. r-squared, adjusted r-squared, RMSE of residuals, p-value of the F-statistic, AIC, BIC, etc.)
+- best fit intercept and model coefficients
+- variance  inflation factors
+- residual plots
+- figures showing other diagnostic descriptions of the analysis (e.g. coefficients vs alpha, MSE vs alpha, and AIC and BIC vs alpha) 
+
 ### Stepwise
 
 The **stepwise** function in the stepAIC module has the option to use either forward selection (default), backward selection, or all subsets of possible combinations for the optimum set of predictor variables as follows using statsmodels OLS:
