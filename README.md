@@ -344,7 +344,7 @@ The RidgeVIF method is able to find a model where all features have acceptable V
 
 ## Example 4. Use Elastic Net regression to analyze diabetes data
 
-In this example we will use Elastic Net regression to analyze the diabetes data available from sklearn. The ridge function uses the sklearn.processing StandardScaler to standardize the X values by default. Then the elastic function uses the standardized X values to find the best fit model using ElasticNetCV, and Ridge using MSE as the scoring criterion.
+In this example we will use Elastic Net regression to analyze the diabetes data available from sklearn. The elastic function uses the sklearn.processing StandardScaler to standardize the X values by default. Then the elastic function uses the standardized X values to find the best fit model using ElasticNetCV, and Ridge using MSE as the scoring criterion.
 
 Run the following code:
 ```
