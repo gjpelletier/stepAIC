@@ -109,7 +109,7 @@ pip install git+https://github.com/gjpelletier/stepAIC.git --upgrade
 
 Next import the **stepwise**, **lasso**, and **ridge** functions from the stepAIC module as follows in your notebook or python code:<br>
 ```
-from stepAIC import stepwise, lasso, ridge
+from stepAIC import stepwise, lasso, ridge, elastic
 ```
 
 ## Example 1. Use Lasso regression to analyze diabetes data
