@@ -342,4 +342,61 @@ The VIF results using RidgeCV show substantially reduced multicollinearity (2 fe
 
 The RidgeVIF method is able to find a model where all features have acceptable VIF<5, with all VIF values as close as possible to the target VIF (default target VIF=1.0). The model skill for RidgeVIF is similar to the other methods.
 
+## Example 4. Use Elastic Net regression to analyze diabetes data
+
+In this example we will use Elastic Net regression to analyze the diabetes data available from sklearn. The ridge function uses the sklearn.processing StandardScaler to standardize the X values by default. Then the elastic function uses the standardized X values to find the best fit model using ElasticNetCV, and Ridge using MSE as the scoring criterion.
+
+Run the following code:
+```
+# Read X and y from the sklearn diabetes data set
+from sklearn.datasets import load_diabetes
+X, y = load_diabetes(return_X_y=True, as_frame=True)
+
+# Use the elastic function in the stepAIC module
+from stepAIC import elastic
+model_objects, model_outputs = elastic(X, y)
+```
+
+Running the code above produces the following output display of the best fit model:
+
+```
+ElasticNetCV regression statistics of best model in model_outputs['stats']:
+
+
+| Statistic          |    ElasticNetCV |
+|:-------------------|----------------:|
+| alpha              |     1.11865     |
+| r-squared          |     0.512957    |
+| adjusted r-squared |     0.503959    |
+| nobs               |   442           |
+| df residuals       |   434           |
+| df model           |     7           |
+| F-statistic        |    65.2989      |
+| Prob (F-statistic) |     1.11022e-16 |
+| RMSE               |    53.7411      |
+| Log-Likelihood     | -2388.18        |
+| AIC                |  4792.36        |
+| BIC                |  4825.09        |
+| L1-ratio           |     1           |
+
+
+Coefficients of best models in model_outputs['popt']:
+
+
+| Feature   |   ElasticNetCV |
+|:----------|---------------:|
+| const     |      152.133   |
+| age       |       -0       |
+| sex       |       -9.11162 |
+| bmi       |       24.8066  |
+| bp        |       13.9806  |
+| s1        |       -4.58713 |
+| s2        |       -0       |
+| s3        |      -10.5553  |
+| s4        |        0       |
+| s5        |       24.2697  |
+| s6        |        2.45869 |
+```
+
+Note that for the data in the example, the best fit model from ElasticNetCV was found using L1-ratio=1, which is equivalent to Lasso regression using LassoCV in the lasso function of stepAIC.
 
