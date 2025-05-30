@@ -45,11 +45,11 @@ Ridge regression is useful for dealing with multicollinearity, where predictors 
 
 ### Elastic Net
 
-Elastic regression, also know as Elastic Net, is a regularization technique that combines the strengths of Lasso (L1) and Ridge (L2) regression methods. It is particularly useful for handling datasets with high-dimensional features and multicollinearity (correlated features). By blending the penalties of L1 and L2, Elastic Net provides a balance between feature selection (Lasso) and coefficient shrinkage (Ridge).
-
 The **elastic** function in the stepAIC module provides output of the fitted regression model and summary statistics using the following method from sklearn.linear_model:
 
 - ElasticNetCV: Elastic Net regression with cross-validation using the MSE as the scoring criterion to optimize alpha and the L1-ratio that balances between L1 and L2 regularization.
+
+Elastic regression, also know as Elastic Net, is a regularization technique that combines the strengths of Lasso (L1) and Ridge (L2) regression methods. It is particularly useful for handling datasets with high-dimensional features and multicollinearity (correlated features). By blending the penalties of L1 and L2, Elastic Net provides a balance between feature selection (Lasso) and coefficient shrinkage (Ridge).
 
 ### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
 
