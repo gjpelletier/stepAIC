@@ -13,7 +13,7 @@ In one line of python code the user can display and save the output of the follo
 - best fit intercept and model coefficients
 - variance  inflation factors
 - residual plots
-- figures showing other diagnostic descriptions of the analysis (e.g. coefficients vs alpha, MSE vs alpha, and AIC and BIC vs alpha) 
+- figures showing other diagnostic descriptions of the analysis (e.g. coefficients vs alpha, MSE vs alpha, AIC and BIC vs alpha) 
 
 ### Stepwise
 
