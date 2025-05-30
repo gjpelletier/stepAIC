@@ -17,7 +17,7 @@ Either the AIC, BIC, or adjusted rsquared may be used as the criterion with forw
 
 ### Lasso
 
-The **lasso** function in the stepAIC module provides output of regression models and summary statistics using the following methods from sklear.linear_model:
+The **lasso** function in the stepAIC module provides output of regression models and summary statistics using the following methods from sklearn.linear_model:
 
 - LassoCV: Lasso using Cross-Validation with coordinate descent to optimize alpha
 - LassoLarsCV: Lasso using Cross-Validation with Least Angle Regression
