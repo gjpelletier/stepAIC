@@ -1,5 +1,5 @@
 
-# Stepwise, Lasso, Ridge, and Elastic Net linear regression to optimize AIC, BIC, VIF, or MSE in Python and Jupyter Notebook
+# Stepwise, Lasso, Ridge, and Elastic Net linear regression to minimize AIC, BIC, VIF, or MSE in Python and Jupyter Notebook
 
 The stepAIC module includes four main functions, **stepwise**, **lasso**, **ridge**, and **elastic**, to find the set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF), or MSE in a multiple linear regression model.
 
