@@ -9,7 +9,7 @@ The functions in the stepAIC module fit the linear regression models using solve
 
 In one line of python code the user can display and save the output of the following:
 
-- regression summary statistics (e.g. r-squared, adjusted r-squared, RMSE of residuals, p-value of the F-statistic, AIC, BIC, etc.)
+- regression summary statistics (e.g. r-squared, adjusted r-squared, RMSE of residuals, p-value of the F-statistic, AIC, BIC, optimum alpha, etc.)
 - best fit intercept and model coefficients
 - variance  inflation factors
 - residual plots
