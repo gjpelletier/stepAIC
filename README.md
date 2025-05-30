@@ -107,7 +107,7 @@ if you are upgrading from a previous installation of stepAIC, enter the followin
 pip install git+https://github.com/gjpelletier/stepAIC.git --upgrade
 ```
 
-Next import the **stepwise**, **lasso**, and **ridge** functions from the stepAIC module as follows in your notebook or python code:<br>
+Next import the **stepwise**, **lasso**, **ridge**, and **elastic** functions from the stepAIC module as follows in your notebook or python code:<br>
 ```
 from stepAIC import stepwise, lasso, ridge, elastic
 ```
