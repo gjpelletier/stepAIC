@@ -1,7 +1,7 @@
 
-# Stepwise, Lasso, and Ridge linear regression to optimize AIC, BIC, or VIF in Python and Jupyter Notebook
+# Stepwise, Lasso, Ridge, and Elastic Net linear regression to optimize AIC, BIC, VIF, or MSE in Python and Jupyter Notebook
 
-The stepAIC module includes three main functions, **stepwise**, **lasso**, and **ridge**, to find the set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a multiple linear regression model.
+The stepAIC module includes four main functions, **stepwise**, **lasso**, **ridge**, and **elastic**, to find the set of predictor variables that optimizes either the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF), or MSE in a multiple linear regression model.
 
 The choice between Lasso, Ridge, or Stepwise regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso and Ridge regression are generally preferred for their efficiency and ability to handle large datasets without overfitting. However, Stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives.
 
@@ -13,11 +13,11 @@ The **stepwise** function in the stepAIC module has the option to use either for
 - Backward selection starts with all predictors and removes predictors as long as it improves the model (reduces AIC or BIC, or increases adjusted rsquared)
 - All subsets of possible combinations of predictor features to find the best of all possible models (up to 20 candidate predictors)
 
-Either the AIC, BIC, or adjusted rsquared may be used as the criterion with forward, backward, or all subsets. In addition, there is an option to find all features with p-values less than a signficance threshold through backward elimination based only on the p-values of the coefficients. The stepwise algorithm also has the option (default) to remove any non-signficant predictors after either a forward, backward, or all subsets search using the AIC, BIC, or adjusted rsquared criterion. 
+Either the AIC, BIC, or adjusted rsquared may be used as the criterion with forward, backward, or all subsets. In addition, there is an option to find all features with p-values less than a signficance threshold through backward elimination based only on the p-values of the coefficients. The stepwise algorithm also has the option (default) to remove any non-signficant predictors after either a forward, backward, or all subsets search using the AIC, BIC, or adjusted rsquared criterion. The stepwise function uses statsmodels OLS to fit the regression models. 
 
 ### Lasso
 
-The **lasso** function in the stepAIC module provides output of regression models and summary statistics using the following methods:
+The **lasso** function in the stepAIC module provides output of regression models and summary statistics using the following methods from sklear.linear_model:
 
 - LassoCV: Lasso using Cross-Validation with coordinate descent to optimize alpha
 - LassoLarsCV: Lasso using Cross-Validation with Least Angle Regression
@@ -32,7 +32,7 @@ Lasso regression is useful for dealing with multicollinearity, where predictors 
 
 ### Ridge
 
-The **ridge** function in the stepAIC module provides output of regression models and summary statistics using the following methods:
+The **ridge** function in the stepAIC module provides output of regression models and summary statistics using the following methods from sklearn.linear_model:
 
 - RidgeCV: RidgeCV regression with default cross-validation using the MSE as the scoring criterion to optimize alpha
 - RidgeAIC: Ridge regression using AIC as the scoring criterion to optimize alpha by trial
@@ -43,11 +43,19 @@ Ridge regression adds a penalty to the loss function, which is the product of th
 
 Ridge regression is useful for dealing with multicollinearity, where predictors are highly correlated, and when all candidate features should be included in the model. 
 
-### Comparison of Stepwise, Lasso, and Ridge
+### Elastic Net
 
-- Feature selection: Lasso performs explicit feature selection by setting some coefficients to zero, while Ridge shrinks coefficients but retains all predictors. Stepwise regression also performs feature selection but can be less stable than Lasso. 
-- Regularization: Both Lasso and Ridge are regularization techniques that prevent overfitting, but they do so differently. Lasso is more likely to produce sparse models, while Ridge is more likely to shrink coefficients smoothly. 
-- Computational cost: Stepwise regression can be computationally expensive, especially for large datasets. Lasso and Ridge can be solved more efficiently using optimization algorithms. 
+Elastic regression, also know as Elastic Net, is a regularization technique that combines the strengths of Lasso (L1) and Ridge (L2) regression methods. It is particularly useful for handling datasets with high-dimensional features and multicollinearity (correlated features). By blending the penalties of L1 and L2, Elastic Net provides a balance between feature selection (Lasso) and coefficient shrinkage (Ridge).
+
+The **elastic** function in the stepAIC module provides output of the fitted regression model and summary statistics using the following method from sklearn.linear_model:
+
+- ElasticNetCV: Elastic Net regression with cross-validation using the MSE as the scoring criterion to optimize alpha and the L1-ratio that balances between L1 and L2 regularization.
+
+### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
+
+- Feature selection: Lasso performs explicit feature selection by setting some coefficients to zero, while Ridge shrinks coefficients but retains all predictors. Elastic Net balances the features of Lasso and Ridge and is able to do feature selection if the optimum L1-ratio is close to 1. Stepwise regression also performs feature selection but can be less stable than Lasso. 
+- Regularization: Lasso, Ridge, and Elastic Net are regularization techniques that prevent overfitting, but they do so differently. Lasso is more likely to produce sparse models, while Ridge is more likely to shrink coefficients smoothly. Elastic Net balances the capabilities of Lasso and Ridge.
+- Computational cost: Stepwise regression can be computationally expensive, especially for large datasets. Lasso, Ridge, and Elastic Net can be solved more efficiently using optimization algorithms. 
 
 ### AIC vs BIC
 
