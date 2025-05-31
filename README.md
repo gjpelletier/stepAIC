@@ -93,9 +93,9 @@ Final Prediction:
 
 **Advantages of Stacking Regression**
 
-– Utilizes the strengths of multiple models.  
-– Helps mitigate overfitting or underfitting.  
-– Works well for datasets with nonlinear relationships.
+– Utilizes the strengths of multiple models  
+– Helps mitigate overfitting or underfitting 
+– Works well for datasets with nonlinear relationships
 
 ### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
 
