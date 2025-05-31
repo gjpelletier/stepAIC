@@ -507,5 +507,5 @@ Strength coefficients of base_regressors in model_outputs['strength']:
 
 ![StackingRegressor_residuals](https://github.com/user-attachments/assets/8f2afcf7-a393-4c49-86ca-6114743b2866)
 
-Note that the **stacking* function was able to find a final model with greater skill than the methods used in Examoles 1-4.
+Note that the stacking regression was able to find a final model with greater skill than the methods used in Examoles 1-4.
 
