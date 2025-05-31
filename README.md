@@ -3,7 +3,7 @@
 
 The stepAIC module includes five main functions, **stepwise**, **lasso**, **ridge**, **elastic**, and **stacking** to find the set of predictor variables that minimizes either the Mean Squared Error (MSE), Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a multiple linear regression model.
 
-The choice between Lasso, Ridge, Elastic Net, Stepwise, or Stacking regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso, Ridge, and Elastic Net regression are generally preferred for their efficiency and ability to handle large datasets without overfitting. However, Stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives. Stacking regression is an ensemble learning technique that improves predictive accuracy by combining multiple base regression models.
+The choice between Lasso, Ridge, Elastic Net, Stepwise, or Stacking regression depends on the specific context and requirements of the analysis. Stepwise regression is widely used ([e.g. Murtaugh, 2009](https://doi.org/10.1111/j.1461-0248.2009.01361.x)), but often criticized ([e.g. Flom and Cassell, 2007](https://www.lexjansen.com/pnwsug/2008/DavidCassell-StoppingStepwise.pdf)). Lasso, Ridge, and Elastic Net regression are generally preferred for their efficiency and ability to handle large datasets without overfitting. However, Stepwise regression can be more suitable for exploratory data analysis and when the goal is to identify the most influential predictors. Ultimately, the best choice depends on the data characteristics and the researcher's objectives. Stacking regression is an ensemble machine learning technique that improves predictive accuracy by combining multiple base regression models.
 
 The functions in the stepAIC module fit the linear regression models using solvers from statsmodels and sklearn, and add functionality to make it easier to apply those methods. 
 
@@ -63,7 +63,7 @@ Elastic regression, also know as Elastic Net, is a regularization technique that
 
 ### Stacking
 
-The **stacking** function in the stepAIC module provides output of regression models and summary statistics using the sklearn StackingRegressor function for ensemble modeling with any combination of sklearn base regressors which can be turned 'on' or 'off' with the following optional keyword arguments:
+The **stacking** function in the stepAIC module provides output of a fitted regression model and summary statistics using the sklearn StackingRegressor function for ensemble modeling with any combination of sklearn base regressors which can be turned 'on' or 'off' with the following optional keyword arguments:
 
 - Lasso= 'on' (default) or 'off'        uses LassoCV
 - Ridge= 'on' (default) or 'off'        uses RidgeCV
@@ -76,7 +76,7 @@ The **stacking** function in the stepAIC module provides output of regression mo
 - DecisionTree= 'on' (default) or 'off' uses DecisionTreeRegressor
 - RandomForest= 'on' (default) or 'off' uses RandomForestRegressor
 
-Stacking regression is an **ensemble learning technique** that improves predictive accuracy by combining multiple base regression models. Instead of selecting a single best model, stacking leverages multiple models to generate a more robust final prediction.
+Stacking regression is an **ensemble** machine learning technique that improves predictive accuracy by combining multiple base regression models. Instead of selecting a single best model, stacking leverages multiple models to generate a more robust final prediction.
 
 **How Stacking Regression Works:**
 
@@ -91,7 +91,7 @@ Stacking regression is an **ensemble learning technique** that improves predicti
 3. **Final Prediction:**  
    - The meta-model makes a final prediction based on the base models' combined outputs.
 
-**Advantages of Stacking Regression**
+**Advantages of Stacking Regression:**
 
 – Utilizes the strengths of multiple models.  
 – Helps mitigate overfitting or underfitting.  
