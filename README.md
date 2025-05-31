@@ -78,20 +78,20 @@ The **stacking** function in the stepAIC module provides output of a fitted regr
 
 Stacking regression is an **ensemble** machine learning technique that improves predictive accuracy by combining multiple base regression models. Instead of selecting a single best model, stacking leverages multiple models to generate a more robust final prediction.
 
-**How Stacking Regression Works:**
+**How Stacking Regression Works**
 
-1. **Base Regressors (Level 0 Models):**  
-   - Several regression models (e.g., Lasso, Ridge, Elastic, DecisionTree, RandomForest, etc.) are trained independently on the dataset.
-   - Each model learns different aspects of the data.
+Base Regressors (Level 0 Models):  
+- Several regression models (e.g., Lasso, Ridge, Elastic, DecisionTree, RandomForest, etc.) are trained independently on the dataset.
+- Each model learns different aspects of the data.
 
-2. **Meta-Model (Level 1 Model):**  
-   - A separate model (linear regression) is trained to **learn from the outputs of base models**.
-   - It assigns strength weights to each base model’s predictions, determining which models contribute the most to final accuracy.
+Meta-Model (Level 1 Model):  
+- A separate model (linear regression) is trained to **learn from the outputs of base models**.
+- It assigns strength weights to each base model’s predictions, determining which models contribute the most to final accuracy.
 
-3. **Final Prediction:**  
-   - The meta-model makes a final prediction based on the base models' combined outputs.
+Final Prediction: 
+- The meta-model makes a final prediction based on the base models' combined outputs.
 
-**Advantages of Stacking Regression:**
+**Advantages of Stacking Regression**
 
 – Utilizes the strengths of multiple models.  
 – Helps mitigate overfitting or underfitting.  
