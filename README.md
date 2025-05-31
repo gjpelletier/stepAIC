@@ -80,12 +80,12 @@ Stacking regression is an **ensemble learning technique** that improves predicti
 
 #### How Stacking Regression Works:
 1. **Base Regressors (Level 0 Models):**  
-   - Multiple regression models (e.g., Linear Regression, Random Forest, XGBoost) are trained independently on the dataset.
+   - Several regression models (e.g., Lasso, Ridge, Elastic, DecisionTree, RandomForest, etc.) are trained independently on the dataset.
    - Each model learns different aspects of the data.
 
 2. **Meta-Model (Level 1 Model):**  
-   - A separate model (often a linear regression or another ensemble method) is trained to **learn from the outputs of base models**.
-   - It assigns weights to each base model’s predictions, determining which models contribute the most to final accuracy.
+   - A separate model (linear regression) is trained to **learn from the outputs of base models**.
+   - It assigns strength weights to each base model’s predictions, determining which models contribute the most to final accuracy.
 
 3. **Final Prediction:**  
    - The meta-model makes a final prediction based on the base models' combined outputs.
@@ -99,7 +99,6 @@ Stacking regression is an **ensemble learning technique** that improves predicti
 - **Base Models Must Be Diverse:** If base models are too similar, stacking loses effectiveness.  
 - **Meta-Model Selection Matters:** Linear regression often works well, but nonlinear models can enhance performance.  
 - **Cross-Validation Prevents Data Leakage:** Using out-of-fold predictions ensures unbiased training of the meta-model.
-
 
 ### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
 
