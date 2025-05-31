@@ -1,5 +1,5 @@
 
-# Stepwise, Lasso, Ridge, and Elastic Net linear regression to minimize MSE, AIC, BIC, or VIF in Python and Jupyter Notebook
+# Stepwise, Lasso, Ridge, Elastic Net, and Stacking linear regression to minimize MSE, AIC, BIC, or VIF in Python and Jupyter Notebook
 
 The stepAIC module includes four main functions, **stepwise**, **lasso**, **ridge**, and **elastic**, to find the set of predictor variables that minimizes either the Mean Squared Error (MSE), Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a multiple linear regression model.
 
@@ -60,6 +60,46 @@ The **elastic** function in the stepAIC module provides output of the fitted reg
 - ElasticNetCV: Elastic regression with cross-validation using the MSE as the scoring criterion to optimize alpha and the L1-ratio that balances between L1 and L2 regularization.
 
 Elastic regression, also know as Elastic Net, is a regularization technique that combines the strengths of Lasso (L1) and Ridge (L2) regression methods. It is particularly useful for handling datasets with high-dimensional features and multicollinearity (correlated features). By blending the penalties of L1 and L2, Elastic Net provides a balance between feature selection (Lasso) and coefficient shrinkage (Ridge).
+
+### Stacking
+
+The **stacking** function in the stepAIC module provides output of regression models and summary statistics using the sklearn StackingRegressor function for ensemble modeling with any combination of sklearn base regressors which can be turned 'on' or 'off' with the following optional keyword arguments:
+
+- Lasso= 'on' (default) or 'off'        uses LassoCV
+- Ridge= 'on' (default) or 'off'        uses RidgeCV
+- ElasticNet= 'on' (default) or 'off'   uses ElasticNetCV
+- SGD= 'on' (default) or 'off'          uses SGDRegressor
+- KNN= 'on' (default) or 'off'          uses KNeighborsRegressor
+- SVR= 'on' (default) or 'off'          uses SVR(kernel='rbf')
+- MLP= 'on' or 'off' (default)          uses MLPRegressor
+- XGB= 'on' (default) or 'off'          uses GradientBoostingRegressor
+- DecisionTree= 'on' (default) or 'off' uses DecisionTreeRegressor
+- RandomForest= 'on' (default) or 'off' uses RandomForestRegressor
+
+Stacking regression is an **ensemble learning technique** that improves predictive accuracy by combining multiple base regression models. Instead of selecting a single best model, stacking leverages multiple models to generate a more robust final prediction.
+
+#### How Stacking Regression Works:
+1. **Base Regressors (Level 0 Models):**  
+   - Multiple regression models (e.g., Linear Regression, Random Forest, XGBoost) are trained independently on the dataset.
+   - Each model learns different aspects of the data.
+
+2. **Meta-Model (Level 1 Model):**  
+   - A separate model (often a linear regression or another ensemble method) is trained to **learn from the outputs of base models**.
+   - It assigns weights to each base model’s predictions, determining which models contribute the most to final accuracy.
+
+3. **Final Prediction:**  
+   - The meta-model makes a final prediction based on the base models' combined outputs.
+
+#### Advantages of Stacking Regression
+– Utilizes the strengths of multiple models.  
+– Helps mitigate overfitting or underfitting.  
+– Works well for datasets with nonlinear relationships.
+
+### **Key Considerations**
+- **Base Models Must Be Diverse:** If base models are too similar, stacking loses effectiveness.  
+- **Meta-Model Selection Matters:** Linear regression often works well, but nonlinear models can enhance performance.  
+- **Cross-Validation Prevents Data Leakage:** Using out-of-fold predictions ensures unbiased training of the meta-model.
+
 
 ### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
 
