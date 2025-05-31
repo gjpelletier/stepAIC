@@ -446,3 +446,23 @@ Coefficients of best models in model_outputs['popt']:
 
 Note that for the data in the example, the best fit model from ElasticNetCV was found using L1-ratio=1, which is equivalent to Lasso regression using LassoCV in the lasso function of stepAIC.
 
+## Example 4. Use Elastic Net regression to analyze diabetes data
+
+In this example we will use Elastic Net regression to analyze the diabetes data available from sklearn. The elastic function uses the sklearn.processing StandardScaler to standardize the X values by default. Then the elastic function uses the standardized X values to find the best fit model using ElasticNetCV, and Ridge using MSE as the scoring criterion.
+
+Run the following code:
+```
+# Read X and y from the sklearn diabetes data set
+from sklearn.datasets import load_diabetes
+X, y = load_diabetes(return_X_y=True, as_frame=True)
+
+# Use the stacking function in the stepAIC module
+from stepAIC import elastic
+model_objects, model_outputs = stacking(X, y)
+```
+
+Running the code above produces the following output display of the best fit model:
+```
+
+```
+
