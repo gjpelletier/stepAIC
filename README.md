@@ -97,12 +97,6 @@ Stacking regression is an **ensemble learning technique** that improves predicti
 – Helps mitigate overfitting or underfitting.  
 – Works well for datasets with nonlinear relationships.
 
-**Key Considerations**
-
-- **Base Models Must Be Diverse:** If base models are too similar, stacking loses effectiveness.  
-- **Meta-Model Selection Matters:** Linear regression often works well, but nonlinear models can enhance performance.  
-- **Cross-Validation Prevents Data Leakage:** Using out-of-fold predictions ensures unbiased training of the meta-model.
-
 ### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
 
 - Feature selection: Lasso performs explicit feature selection by setting some coefficients to zero, while Ridge shrinks coefficients but retains all predictors. Elastic Net balances the regularization methods of Lasso and Ridge and is able to do feature selection. Stepwise regression also performs feature selection but can be less stable than Lasso. 
