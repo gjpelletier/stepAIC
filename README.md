@@ -457,12 +457,53 @@ from sklearn.datasets import load_diabetes
 X, y = load_diabetes(return_X_y=True, as_frame=True)
 
 # Use the stacking function in the stepAIC module
-from stepAIC import elastic
+from stepAIC import stacking
 model_objects, model_outputs = stacking(X, y)
 ```
 
 Running the code above produces the following output display of the best fit model:
 ```
+StackingRegressor statistics of fitted ensemble model in model_outputs['stats']:
 
+
+| Statistic          |   StackingRegressor |
+|:-------------------|--------------------:|
+| r-squared          |         0.569879    |
+| adjusted r-squared |         0.5599      |
+| n_samples          |       442           |
+| df residuals       |       432           |
+| df model           |         9           |
+| F-statistic        |        63.5966      |
+| Prob (F-statistic) |         1.11022e-16 |
+| RMSE               |        50.5031      |
+| Log-Likelihood     |     -2360.71        |
+| AIC                |      4741.42        |
+| BIC                |      4782.33        |
+
+
+Strength coefficients of base_regressors in model_outputs['strength']:
+
+
+- positive intercept suggests base models under-predict target
+- negative intercept suggests base models over-predict target
+- positive coefficients have high importance
+- coefficients near zero have low importance
+- negative coefficients have counteracting importance
+
+
+| Coefficient   |   StackingRegressor |
+|:--------------|--------------------:|
+| Intercept     |         -83.2192    |
+| Lasso         |           1.64462   |
+| Ridge         |          -0.189968  |
+| ElasticNet    |          -1.79114   |
+| SGD           |           0.934572  |
+| KNN           |           0.112165  |
+| SVR           |           0.802727  |
+| XGB           |           0.0763266 |
+| DecisionTree  |          -0.0572201 |
+| RandomForest  |           0.0902712 |
 ```
+
+![StackingRegressor_residuals](https://github.com/user-attachments/assets/8f2afcf7-a393-4c49-86ca-6114743b2866)
 
