@@ -76,9 +76,9 @@ The **stacking** function in the stepAIC module provides output of a fitted regr
 - DecisionTree= 'on' (default) or 'off' uses DecisionTreeRegressor
 - RandomForest= 'on' (default) or 'off' uses RandomForestRegressor
 
-The meta-model may be specifed using the optional keyword argument final_estimator:
+The meta-model may be specifed using the optional keyword argument meta:
 
-- final_estimator= 'linear' (default), 'lasso', or 'elastic' 
+- meta= 'linear' (default), 'lasso', or 'elastic' 
 
 where 'linear' uses LinearRegression (default), 'lasso' uses LassoCV,  'ridge' uses RidgeCV, and 'elastic' uses ElasticNetCV as the meta-model for the final estimator.
 
