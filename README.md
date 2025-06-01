@@ -65,16 +65,16 @@ Elastic regression, also know as Elastic Net, is a regularization technique that
 
 The **stacking** function in the stepAIC module provides output of a fitted regression model and summary statistics using the sklearn StackingRegressor function for ensemble modeling with any combination of sklearn base regressors which can be turned 'on' or 'off' with the following optional keyword arguments:
 
-- Lasso= 'on' (default) or 'off'        uses LassoCV
-- Ridge= 'on' (default) or 'off'        uses RidgeCV
-- ElasticNet= 'on' (default) or 'off'   uses ElasticNetCV
-- SGD= 'on' (default) or 'off'          uses SGDRegressor
-- KNN= 'on' (default) or 'off'          uses KNeighborsRegressor
-- SVR= 'on' (default) or 'off'          uses SVR(kernel='rbf')
-- MLP= 'on' or 'off' (default)          uses MLPRegressor
-- XGB= 'on' (default) or 'off'          uses GradientBoostingRegressor
-- DecisionTree= 'on' (default) or 'off' uses DecisionTreeRegressor
-- RandomForest= 'on' (default) or 'off' uses RandomForestRegressor
+- lasso= 'on' (default) or 'off'        uses LassoCV
+- ridge= 'on' (default) or 'off'        uses RidgeCV
+- elastic= 'on' (default) or 'off'      uses ElasticNetCV
+- sgd= 'on' (default) or 'off'          uses SGDRegressor
+- knr= 'on' (default) or 'off'          uses KNeighborsRegressor
+- svr= 'on' (default) or 'off'          uses SVR(kernel='rbf')
+- mlp= 'on' or 'off' (default)          uses MLPRegressor
+- gbr= 'on' (default) or 'off'          uses GradientBoostingRegressor
+- tree= 'on' (default) or 'off'         uses DecisionTreeRegressor
+- forest= 'on' (default) or 'off'       uses RandomForestRegressor
 
 The meta-model may be specifed using the optional keyword argument meta:
 
