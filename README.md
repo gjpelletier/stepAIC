@@ -91,7 +91,7 @@ Base Regressors (Level 0 Models):
 - Each model learns different aspects of the data.
 
 Meta-Model (Level 1 Model):  
-- A separate model (linear regression) is trained to **learn from the outputs of base models**.
+- A separate model (e.g. linear regression, Lasso, or Elastic) is trained to **learn from the outputs of base models**.
 - It assigns strength weights to each base model’s predictions, determining which models contribute the most to final accuracy.
 
 Final Prediction: 
