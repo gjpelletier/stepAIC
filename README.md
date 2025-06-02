@@ -474,20 +474,20 @@ StackingRegressor statistics of fitted ensemble model in model_outputs['stats']:
 
 | Statistic          |   StackingRegressor |
 |:-------------------|--------------------:|
-| r-squared          |         0.569879    |
-| adjusted r-squared |         0.5599      |
+| r-squared          |         0.572372    |
+| adjusted r-squared |         0.56245     |
 | n_samples          |       442           |
 | df residuals       |       432           |
 | df model           |         9           |
-| F-statistic        |        63.5966      |
+| F-statistic        |        64.2471      |
 | Prob (F-statistic) |         1.11022e-16 |
-| RMSE               |        50.5031      |
-| Log-Likelihood     |     -2360.71        |
-| AIC                |      4741.42        |
-| BIC                |      4782.33        |
+| RMSE               |        50.3566      |
+| Log-Likelihood     |     -2359.43        |
+| AIC                |      4738.85        |
+| BIC                |      4779.77        |
 
 
-Strength coefficients of base_regressors in model_outputs['strength']:
+Meta-model coefficients of base_regressors in model_outputs['meta_params']:
 
 
 - positive intercept suggests base models under-predict target
@@ -497,21 +497,21 @@ Strength coefficients of base_regressors in model_outputs['strength']:
 - negative coefficients have counteracting importance
 
 
-| Coefficient   |   StackingRegressor |
-|:--------------|--------------------:|
-| Intercept     |         -83.2192    |
-| Lasso         |           1.64462   |
-| Ridge         |          -0.189968  |
-| ElasticNet    |          -1.79114   |
-| SGD           |           0.934572  |
-| KNN           |           0.112165  |
-| SVR           |           0.802727  |
-| XGB           |           0.0763266 |
-| DecisionTree  |          -0.0572201 |
-| RandomForest  |           0.0902712 |
+| Coefficient               |   StackingRegressor |
+|:--------------------------|--------------------:|
+| Intercept                 |         -79.4182    |
+| LassoCV                   |           1.66162   |
+| RidgeCV                   |           0.0481335 |
+| ElasticNetCV              |          -1.83486   |
+| SGDRegressor              |           0.731691  |
+| KNeighborsRegressor       |           0.112592  |
+| SVR                       |           0.762235  |
+| GradientBoostingRegressor |           0.0743225 |
+| DecisionTreeRegressor     |          -0.0582058 |
+| RandomForestRegressor     |           0.096149  |
 ```
 
-![StackingRegressor_residuals](https://github.com/user-attachments/assets/8f2afcf7-a393-4c49-86ca-6114743b2866)
+![StackingRegressor_residuals](https://github.com/user-attachments/assets/4bba57ff-142f-4585-9d41-dcdcbc36f012)
 
 Note that the stacking regression was able to find a final model with greater skill than the methods used in Examples 1-4.
 
