@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__version__ = "1.0.95"
+__version__ = "1.0.96"
 
 def plot_predictions_from_test(model, X, y, scaler='off'):
 
@@ -781,8 +781,9 @@ def stepwise(X, y, **kwargs):
             ax=axs[1]
         )
         axs[1].set_title("Residuals vs. Predicted")
+        rmse = np.sqrt(np.mean(model_output['residuals']**2))
         fig.suptitle(
-            f"Predictions compared with actual values and residuals (RMSE={stats['RMSE']:.3f})")
+            f"Predictions compared with actual values and residuals (RMSE={rmse:.3f})")
         plt.tight_layout()
         # plt.show()
         plt.savefig("Stepwise_predictions.png", dpi=300)
@@ -798,7 +799,6 @@ def stepwise(X, y, **kwargs):
     warnings.filterwarnings("default")
     
     return model_object, model_output
-
 
 def stats_given_model(X,y,model):
 
