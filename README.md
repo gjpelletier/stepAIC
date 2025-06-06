@@ -1,7 +1,7 @@
 
 # Stepwise, Lasso, Ridge, Elastic Net, and Stacking linear regression to minimize MSE, AIC, BIC, or VIF in Python and Jupyter Notebook
 
-## Note: This stepAIC module has been replaced by the EasyMLR module that is available at this link: https://github.com/gjpelletier/EasyMLR
+## Note: This repository has been replaced by the EasyMLR repository that is available at this link: https://github.com/gjpelletier/EasyMLR
 
 The stepAIC module began as a project to provide a Python alternative to the R stepAIC function. It has since grown to include five main functions, **stepwise**, **lasso**, **ridge**, **elastic**, and **stacking** to find the set of predictor variables that minimizes either the Mean Squared Error (MSE), Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), adjusted rsquared, or Variance Inflation Factors (VIF) in a multiple linear regression model.
 
