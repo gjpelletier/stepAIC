@@ -1,5 +1,5 @@
 
-# Stepwise, Lasso, Ridge, Elastic Net, and Stacking linear regression to minimize MSE, AIC, BIC, or VIF in Python and Jupyter Notebook
+# Stepwise, Lasso, Ridge, and Elastic Net regression to minimize MSE, AIC, BIC, or VIF in Python and Jupyter Notebook
 
 ## Note: This repository has been replaced by the PyMLR repository that is available at this link: https://github.com/gjpelletier/PyMLR
 
