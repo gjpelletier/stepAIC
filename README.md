@@ -63,48 +63,6 @@ The **elastic** function in the stepAIC module provides output of the fitted reg
 
 Elastic regression, also know as Elastic Net, is a regularization technique that combines the strengths of Lasso (L1) and Ridge (L2) regression methods. It is particularly useful for handling datasets with high-dimensional features and multicollinearity (correlated features). By blending the penalties of L1 and L2, Elastic Net provides a balance between feature selection (Lasso) and coefficient shrinkage (Ridge).
 
-### Stacking
-
-The **stacking** function in the stepAIC module provides output of a fitted regression model and summary statistics using the sklearn StackingRegressor function for ensemble modeling with any combination of sklearn base regressors which can be turned 'on' or 'off' with the following optional keyword arguments:
-
-- lasso= 'on' (default) or 'off'        uses LassoCV
-- ridge= 'on' (default) or 'off'        uses RidgeCV
-- elastic= 'on' (default) or 'off'      uses ElasticNetCV
-- sgd= 'on' (default) or 'off'          uses SGDRegressor
-- knr= 'on' (default) or 'off'          uses KNeighborsRegressor
-- svr= 'on' (default) or 'off'          uses SVR(kernel='rbf')
-- mlp= 'on' or 'off' (default)          uses MLPRegressor
-- gbr= 'on' (default) or 'off'          uses GradientBoostingRegressor
-- tree= 'on' (default) or 'off'         uses DecisionTreeRegressor
-- forest= 'on' (default) or 'off'       uses RandomForestRegressor
-
-The meta-model may be specifed using the optional keyword argument meta:
-
-- meta= 'linear', 'lasso', 'ridge' (default), or 'elastic' 
-
-where 'linear' uses LinearRegression, 'lasso' uses LassoCV,  'ridge' uses RidgeCV (default), and 'elastic' uses ElasticNetCV as the meta-model for the final estimator.
-
-Stacking regression is an **ensemble** machine learning technique that improves predictive accuracy by combining multiple base regression models. Instead of selecting a single best model, stacking leverages multiple models to generate a more robust final prediction.
-
-**How Stacking Regression Works**
-
-Base Regressors (Level 0 Models):  
-- Several regression models (e.g., Lasso, Ridge, Elastic, DecisionTree, RandomForest, etc.) are trained independently on the dataset.
-- Each model learns different aspects of the data.
-
-Meta-Model (Level 1 Model):  
-- A separate model (e.g. linear regression, Lasso, or Elastic) is trained to **learn from the outputs of base models**.
-- It assigns strength weights to each base model’s predictions, determining which models contribute the most to final accuracy.
-
-Final Prediction: 
-- The meta-model makes a final prediction based on the base models' combined outputs.
-
-**Advantages of Stacking Regression**
-
-– Utilizes the strengths of multiple models  
-– Helps mitigate overfitting or underfitting 
-– Works well for datasets with nonlinear relationships
-
 ### Comparison of Stepwise, Lasso, Ridge, and Elastic Net
 
 - Feature selection: Lasso performs explicit feature selection by setting some coefficients to zero, while Ridge shrinks coefficients but retains all predictors. Elastic Net balances the regularization methods of Lasso and Ridge and is able to do feature selection. Stepwise regression also performs feature selection but can be less stable than Lasso. 
@@ -135,7 +93,6 @@ Ridge regression reduces the Variance Inflation Factors of the features by addin
 Cross-validated ridge regression (e.g. using RidgeCV) does not always result in acceptable multicollinearity as indicated by VIF. While cross-validation helps in fine-tuning the regression coefficients, it does not always result in VIF values close to 1. Ideally the VIF of all features should be as close as possibe to VIF=1. This can be achieved using a trial and error method of evaluating the VIF values of the model features over a range of alpha values. 
 
 The **ridge** function in stepAIC includes an algorithm (RidgeVIF) to find the model with the optimum value of alpha that will result in VIF values as close as possible to a user-specified target VIF (default target VIF=1.0). This assures that there will be acceptable multicollinearity for all features. The trade-off is that this algorithm reduces the model coefficients such that the target VIF will be achieved. The user has the option to specify any target for VIF to explore the balance between VIF and coefficient values.  
-
 
 ## Installation for Python or Jupyter Notebook
 
